@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('LandingPage');
+});
+Route::get('/register', function () {
+    return view('Register');
+});
+Route::get('/Login', function () {
+    return view('Login');
+});
+
+Route::get('/Catatan', function () {
+    return view('Catatan');
+});
+Route::get('/Homepage', function () {
+    return view('NotesMain');
+});
+Route::get('/LaporanKeuangan', function () {
+    return view('laporanKeuangan');
 });
