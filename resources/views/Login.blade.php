@@ -72,7 +72,12 @@
                                     value="Register">
                                     Register
                                 </button>
+                                
                             </div>
+                            
+                            <a href="/" class=" rounded-md w-full h-10  bg-white font-bold hover:bg-[#c7b047] hover:text-white  focus:bg-white hover:scale-105 transition-all duration-100 text-black mt-2 flex items-center justify-center focus:text-black ">Back</a>
+                            
+                            
                         </form>
                     </div>
                 </div>
