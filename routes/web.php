@@ -32,3 +32,9 @@ Route::get('/Homepage', function () {
 Route::get('/LaporanKeuangan', function () {
     return view('laporanKeuangan');
 });
+Route::get('/Forum', function () {
+    return view('Forum');
+});
+Route::get('/Todolist', function () {
+    return view('Todolist');
+});
