@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    //testing
     public function login(Request $request)
     {
         $request->validate([
@@ -29,7 +30,7 @@ class UserController extends Controller
             'password' => 'required',
             'cPassword' => 'required|same:password',
         ]);
-        
+
         User::create([
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password')),
