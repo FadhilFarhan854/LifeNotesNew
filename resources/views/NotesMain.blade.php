@@ -68,9 +68,9 @@
                        
                     </div>
                     <!-- box1 -->
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200"><span class="w-full h-full flex justify-center items-center -mt-3">+</span></div>
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#fff] hover:scale-105 transition-all duration-200"><span class="w-full h-full flex justify-center items-center -mt-3">+</span></div>
                     <!-- box2 -->
-                    <divs class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200 group cursor-pointer">
+                    <divs class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 group cursor-pointer">
                         <script>
                                 const divElement = document.querySelector('divs'); // Replace 'div' with the ID or class of your actual div element
                                 divElement.addEventListener('click', function() {
@@ -79,8 +79,6 @@
                         </script>
                         
                         <div class="w-full h-[20%] flex justify-start p-5 ">
-
-                            </div>
                             <span class="text-white font-bold text-2xl flex justify-start items-start ">Title</span>
                         </div>
                         <div class="w-full h-[80%]  flex justify-start items-start p-5 ">
@@ -90,8 +88,9 @@
                     </divs>
 
                     <!-- box3 -->
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200 ">
-                        
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 ">
+
+                            
                           {{-- title --}}
                         <div class="w-full h-[20%] flex justify-start p-5">
                             <span class="text-white font-bold text-lg flex justify-start items-start ">Title</span>
@@ -102,11 +101,11 @@
                         </div>
 
                     </div>
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200"></div>
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200"></div>
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200"></div>
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#fffb90] hover:scale-105 transition-all duration-200"></div>
-                  
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200"></div>
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200"></div>
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200"></div>
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200"></div>
+                   
                     
 
                 </div>
