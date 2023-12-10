@@ -45,3 +45,6 @@ Route::get('/Forum', function () {
 Route::get('/Todolist', function () {
     return view('Todolist');
 });
+Route::get('/dataKeuangan', function () {
+    return view('dataKeuangan');
+});

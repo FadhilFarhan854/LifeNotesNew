@@ -40,11 +40,11 @@
                     <div class="flex justify-start mt-5 gap-3">
 
                         <a href="/Login"
-                            class="rounded-md bg-slate-200 w-20 h-10 flex justify-center items-center"><span
-                                class="text-slate-700 text-base font-bold">Login</span></a>
+                            class="rounded-md bg-slate-200 w-20 h-10 flex justify-center items-center hover:bg-[#c7b047] hover:scale-105 hover:text-white transition-all group"><span
+                                class="text-slate-700 text-base font-bold group-hover:text-white">Login</span></a>
                         <a href="/Register"
-                            class="rounded-md bg-slate-200 w-20 h-10 flex justify-center items-center"><span
-                                class="text-slate-700 text-base font-bold">Register</span></a>
+                            class="rounded-md bg-slate-200 w-20 h-10 flex justify-center items-center hover:bg-[#c7b047] hover:scale-105 hover:text-white transition-all group"><span
+                                class="text-slate-700 text-base font-bold group-hover:text-white">Register</span></a>
 
 
                     </div>

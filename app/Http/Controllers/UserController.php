@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+<<<<<<< HEAD
     
+=======
+    //testing
+>>>>>>> a510977ed7194c9c2be0a3fd5493c1f983f8f4e5
     public function login(Request $request)
     {
         $request->validate([

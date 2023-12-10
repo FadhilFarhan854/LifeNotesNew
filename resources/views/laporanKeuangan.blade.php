@@ -62,7 +62,9 @@
                 
             </div>
             <!-- box container -->
-            <div class="w-full   bg-[#343941] rounded-2xl">
+            <div class="w-full   bg-[#343941] rounded-2xl relative">
+                
+                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
                 <div class="w-full h-[85vh] grid grid-cols-2  gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     <!-- Box-1 -->
                     <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
