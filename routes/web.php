@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CatatanController;
+use App\Http\Controllers\NotesMainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('LandingPage');
 });
-Route::get('/NotesMain', function () {
-    return view('NotesMain');
-});
+
+Route::get('/NotesMain', [NotesMainController::class, 'index']);
+
 Route::post('/bRegister', [UserController::class, 'register']);
 Route::post('/bLogin',  [UserController::class, 'Login']);
 
@@ -30,12 +32,9 @@ Route::get('/Register', function () {
     return view('Register');
 });
 
-Route::get('/Catatan', function () {
-    return view('Catatan');
-});
-Route::get('/Homepage', function () {
-    return view('NotesMain');
-});
+Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
+Route::get('/Search', [CatatanController::class, 'search']);
+
 Route::get('/LaporanKeuangan', function () {
     return view('laporanKeuangan');
 });

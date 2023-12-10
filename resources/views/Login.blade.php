@@ -64,20 +64,22 @@
                                 value="Login">
 
                             <div class="w-\[100\%\]  flex justify-center gap-2 -mt-4">
-                                <input type="submit"
+                                <button type="submit" onclick="window.location.href='/ForgotPassword'"
                                     class="rounded-md w-full h-10 mt-7  bg-white font-bold hover:bg-[#c7b047] hover:text-white focus:bg-white hover:scale-105 transition-all duration-100 text-black  focus:text-black"
-                                    value="Forgot password">
-                                <button type="button"
+                                    value="Forgot password">Forgot Password
+                                </button>
+
+                                <button type="button" onclick="window.location.href='/Register'"
                                     class="rounded-md w-full h-10 mt-7  bg-white font-bold hover:bg-[#c7b047] hover:text-white focus:bg-white hover:scale-105 transition-all duration-100 text-black  focus:text-black"
                                     value="Register">
                                     Register
                                 </button>
-                                
                             </div>
-                            
-                            <a href="/" class=" rounded-md w-full h-10  bg-white font-bold hover:bg-[#c7b047] hover:text-white  focus:bg-white hover:scale-105 transition-all duration-100 text-black mt-2 flex items-center justify-center focus:text-black ">Back</a>
-                            
-                            
+
+                            <a href="/"
+                                class=" rounded-md w-full h-10  bg-white font-bold hover:bg-[#c7b047] hover:text-white  focus:bg-white hover:scale-105 transition-all duration-100 text-black mt-2 flex items-center justify-center focus:text-black ">Back</a>
+
+
                         </form>
                     </div>
                 </div>
