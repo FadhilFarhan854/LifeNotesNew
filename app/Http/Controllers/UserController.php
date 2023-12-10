@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //testing
     public function login(Request $request)
     {
         $request->validate([
@@ -17,8 +16,16 @@ class UserController extends Controller
         ]);
 
         $user = User::where('username', $request->username)->first();
-
+        $remember = $request->has('check');
+        $id_user = $user->id_user;
+        if ($user && password_verify($request->password, $user->password) && $remember) {
+            cookie('cookie_id', 'id_user', 2880);
+            $request->session()->put('id', $id_user);
+            return redirect('/NotesMain');
+        }
         if ($user && password_verify($request->password, $user->password)) {
+            cookie('cookie_id', 'id_user', 2880);
+            $request->session()->put('id', $id_user);
             return redirect('/NotesMain');
         }
         return redirect()->back()->withErrors(['Login' => 'Invalid username or password']);
