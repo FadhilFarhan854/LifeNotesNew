@@ -1,5 +1,5 @@
 <div id="popup" class="fixed inset-0 items-center justify-center hidden bg-gray-800 bg-opacity-50 w-full h-full pt-32">
-    <div class="w-1/2 h-[50%] bg-[#1F2124] rounded-lg row p-3 pt-1 shadow-md shadow-[#d3d174] m-auto">
+    <div class="w-1/2 h-[50%] bg-[#1F2124] rounded-lg row p-3 pt-1 shadow-md shadow-[#000000] m-auto">
         {{-- X-button --}}
         <span class="close text-white hover:text-gray-300 text-2xl cursor-pointer" onclick="togglePopup()">&times;</span>
         <div class="flex justify-between h-[90%] mb-3 w-full">
@@ -12,7 +12,7 @@
                 </div>
 
                 <div>
-                    <button class="w-[30%] h-10 bg-black/50 text-white rounded-md p-2">Back</button>
+                    <button class="w-[30%] h-10 bg-black/50 text-white rounded-md p-2" onclick="togglePopup()">Back</button>
                 </div>
             </div>
             
