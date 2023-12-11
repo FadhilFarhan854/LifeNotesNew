@@ -33,6 +33,7 @@ Route::get('/Register', function () {
 });
 
 Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
+Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
 Route::get('/Search', [CatatanController::class, 'search']);
 
 Route::get('/LaporanKeuangan', function () {
