@@ -61,7 +61,7 @@
                     <form action="/Search" method="get">
                         @csrf
                         <input
-                            class="w-full py-3 h-[60%] rounded-lg bg-[#00000075] border-black border-solid border-2 text-xl font-bold text-white px-12"
+                            class="w-[78vw] py-3 h-[60%] rounded-lg bg-[#00000075] border-black border-solid border-2 text-xl font-bold text-white px-12"
                             placeholder="Search" type="text" name="search">
                     </form>
                 </div>
