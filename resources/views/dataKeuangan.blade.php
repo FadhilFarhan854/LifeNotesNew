@@ -62,8 +62,8 @@
                 
             </div>
             <!-- box container -->
-            <div class="w-full   bg-[#343941] rounded-2xl relative">
-                <button class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center" onclick="togglePopup()"><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
+            <div class="w-full bg-[#00000075] rounded-2xl relative">
+                <button class="absolute rounded-full bg-[#c7b047] hover:bg-[#dbc460] w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center" onclick="togglePopup()"><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
                 
                 <div class="w-full h-[85vh] p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     <!-- Box-1 -->
