@@ -24,7 +24,6 @@ class UserController extends Controller
             return redirect('/NotesMain');
         }
         if ($user && password_verify($request->password, $user->password)) {
-            cookie('cookie_id', 'id_user', 2880);
             $request->session()->put('id', $id_user);
             return redirect('/NotesMain');
         }
