@@ -100,7 +100,7 @@
                     <!-- box2 -->
                     @foreach ($catatan_pribadi as $catatan)
                         <divs
-                            class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 group cursor-pointer">
+                            class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 group cursor-pointer overflow-hidden">
                             <script>
                                 const divElement = document.querySelector('divs'); // Replace 'div' with the ID or class of your actual div element
                                 divElement.addEventListener('click', function() {
