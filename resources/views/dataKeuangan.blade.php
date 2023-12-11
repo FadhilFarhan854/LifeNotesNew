@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @vite('resources/css/app.css')
-    <!-- <style>
+    {{-- <style>
          * {
         border: 1px solid red;
     }
-    </style> -->
+    </style>  --}}
 </head>
 <body class="bg-[#1F2124] h-[100vh]  w-full">
     <div class="flex w-full h-full">
@@ -63,7 +63,7 @@
             </div>
             <!-- box container -->
             <div class="w-full   bg-[#343941] rounded-2xl relative">
-                <button class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
+                <button class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center" onclick="togglePopup()"><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
                 
                 <div class="w-full h-[85vh] p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     <!-- Box-1 -->
@@ -94,6 +94,15 @@
         </div>
         
     </div>
+    <script>
+        
+        function togglePopup() {
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('hidden');
+    }
+    </script>
+    <x-popUp>
+    </x-popUp>
     
 </body>
 </html>
