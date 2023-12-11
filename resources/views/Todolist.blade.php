@@ -25,8 +25,8 @@
     }
     /* * {
         border: 1px solid red;
-    } */
-    
+    }
+     */
     </style>
 </head>
 
@@ -64,28 +64,58 @@
             </div>
 
             <!-- box container -->
-            <div class="flex w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide">
-                <div class="h-auto">
-                    <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
+            <div class="flex flex-col w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide p-10 gap-3">
+                
                     
                  {{-- item 1 --}}
-                <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
+                <div class="flex h-auto w-full bg-[#1F2124] rounded-lg justify-between shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 p-4" onclick="toggleEditCardPopup()">
                         
-                    {{-- <div class="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md">
-                        <div class="p-4">
-                            <label for="checkbox" class="flex items-center space-x-2 cursor-pointer">
-                                <input type="checkbox" id="checkbox" class="h-8 w-8">
-                                <span class="text-lg font-semibold">Pilih Saya</span>
-                            </label>
-                        </div>
-                    </div> --}}
-
-                    <input type="checkbox" name="checkbox" id="checkbox" >
+                    <div class="flex items-center w-full">
+                        <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                        <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                    </div>
                   
                 </div>
 
+                <!-- edit card pop-up container -->
+                <div id="editCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
+                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleEditCardPopup()">
+
+                            <div class="flex items-center w-full">
+                                <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                                <textarea class="w-full h-10 max-h-32 p-2 scrollbar-hide bg-[#1F2124] text-white outline-none resize-none" placeholder="Tulis sesuatu...">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur, vitae dignissimos minus sequi quaerat qui consectetur fugiat quia recusandae obcaecati, aliquam labore libero reprehenderit ea, earum eos facilis? Cumque?</textarea>
+                            </div>
+
+                            
+                            <div class="flex justify-end">
+                                <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleEditCardPopup()">Finish</span>
+                            </div>
+                          
+                    </div>
+                </div>
+
+                <!-- add card pop-up container -->
+                <div id="addCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
+           
+                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleAddCardPopup()">
+                        
+                            <div class="flex items-center w-full">
+                                <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                                {{-- <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p> --}}
+                                <textarea class="w-full h-10 max-h-32 p-2 scrollbar-hide bg-[#1F2124] text-white outline-none resize-none" placeholder="Tulis sesuatu...">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur, vitae dignissimos minus sequi quaerat qui consectetur fugiat quia recusandae obcaecati, aliquam labore libero reprehenderit ea, earum eos facilis? Cumque?</textarea>
+                            </div> 
+
+                            <div class="flex justify-end gap-5">
+                                <span class="close text-red-600 hover:text-red-700 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Delete</span>
+                                <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Finish</span>
+                            </div>
+
+                 
+                    </div>
+                </div>
+
                     {{-- button plus --}}
-                    <button class="fixed bottom-16 right-20 bg-[#c7b047] hover:bg-[#dbc460] text-white p-4 rounded-full shadow">
+                    <button class="fixed bottom-16 right-20 bg-[#c7b047] hover:bg-[#dbc460] text-white p-4 rounded-full shadow" onclick="toggleAddCardPopup()">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
@@ -94,8 +124,7 @@
 
                     {{-- tambah item dari sini --}}
 
-                    </div>
-                </div>
+                
             </div>
 
         </div>
@@ -112,8 +141,13 @@
             }
         }
 
-        function togglePopup() {
-            var popup = document.getElementById('popup');
+        function toggleEditCardPopup() {
+            var popup = document.getElementById('editCardPopup');
+            popup.classList.toggle('hidden');
+        }
+
+        function toggleAddCardPopup() {
+            var popup = document.getElementById('addCardPopup');
             popup.classList.toggle('hidden');
         }
     </script>
