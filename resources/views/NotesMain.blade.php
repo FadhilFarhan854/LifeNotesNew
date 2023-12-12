@@ -52,23 +52,9 @@
             <div class="w-full h-[90%]  bg-[#00000075] rounded-2xl">
 
                 <div class="w-full h-full flex flex-wrap items-start justify-center gap-5 p-5 overflow-y-scroll scrollbar-hide ">
-                    <div class="w-full h-72 flex flex-wrap justify-center items-center">
-                        <div class="w-full  flex flex-wrap justify-center items-center">
-                            <span class=" text-9xl bg-gradient-to-tr from-[#564b21]  to-[#c7b047] bg-animate bg-clip-text text-transparent font-bold items-center">
-                                NOTES
-                            </span>
-                        </div>
-
-                        <div class="flex justify-center items-center w-[55%]">
-                            <span class="text-base bg-gradient-to-tr bg-animate from-[#564b21]  to-[#c7b047]  bg-clip-text text-transparent font-bold items-center text-center">
-                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, iure. Rem voluptatibus, ipsa similique doloribus quis a praesentium nostrum molestiae incidunt assumenda nobis vel porro temporibus quisquam vero aperiam! Eum.
-                             </span>
-
-                        </div>
-
-                    </div>
+                    
                     <!-- box1 -->
-                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#fff] hover:scale-105 transition-all duration-200"><span class="w-full h-full flex justify-center items-center -mt-3">+</span></div>
+                    <div class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#fff] hover:scale-105 transition-all duration-200"><span class="w-full h-full flex justify-center items-center -mt-3 text-white text-9xl ">+</span></div>
                     <!-- box2 -->
                     <divs class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 group cursor-pointer">
                         <script>
