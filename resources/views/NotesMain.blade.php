@@ -29,22 +29,22 @@
             <!-- sidebar -->
             <div class="w-full h-1/3 flex-col items-center mt-0">
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
-                    <div onclick="window.location.href='/NotesMain'"
-                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200">
+                    <button onclick="window.location.href='/NotesMain'"
+                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Catatan</span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">To-do List</span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Laporan Keuangan</span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Forum</span>
-                    </div>
+                    </button>
                 </div>
 
 
@@ -72,30 +72,12 @@
 
                 <div
                     class="w-full h-full flex flex-wrap items-start justify-center gap-5 p-5 overflow-y-scroll scrollbar-hide ">
-                    <div class="w-full h-72 flex flex-wrap justify-center items-center">
-                        <div class="w-full  flex flex-wrap justify-center items-center">
-                            <span
-                                class=" text-9xl bg-gradient-to-tr from-[#564b21]  to-[#c7b047] bg-animate bg-clip-text text-transparent font-bold items-center">
-                                NOTES
-                            </span>
-                        </div>
-
-                        <div class="flex justify-center items-center w-[55%]">
-                            <span
-                                class="text-base bg-gradient-to-tr bg-animate from-[#564b21]  to-[#c7b047]  bg-clip-text text-transparent font-bold items-center text-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, iure. Rem voluptatibus,
-                                ipsa similique doloribus quis a praesentium nostrum molestiae incidunt assumenda nobis
-                                vel porro temporibus quisquam vero aperiam! Eum.
-                            </span>
-
-                        </div>
-
-                    </div>
+                    
                     <!-- box1 -->
                     <div
                         class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200">
                         <a href="/TambahCatatan"><span
-                                class="w-full h-full flex justify-center items-center -mt-3">+</span></a>
+                                class="w-full h-full flex justify-center items-center -mt-3 text-9xl text-white">+</span></a>
                     </div>
                     <!-- box2 -->
                     @foreach ($catatan_pribadi as $catatan)

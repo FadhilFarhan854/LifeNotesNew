@@ -48,10 +48,22 @@
             <!-- sidebar -->
             <div class="w-full h-1/3 flex-col items-center mt-0" >
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
-                    <div class="w-[80%] bg-[#c7b047]  h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#c7b047] transition-all duration-200"><span class="text-lg font-bold text-white">Catatan</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">To-do List</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Forum</span></div>
+                    <button onclick="window.location.href='/NotesMain'"
+                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                        <span class="text-lg font-bold text-white">Catatan</span>
+                    </button>
+                    <button
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">To-do List</span>
+                    </button>
+                    <button
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Laporan Keuangan</span>
+                    </button>
+                    <button
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Forum</span>
+                    </button>
                 </div>
 
 
@@ -72,8 +84,8 @@
             <!-- box container -->
             <div class="w-full h-[90%]  bg-[#00000075] rounded-2xl flex overflow-y-scroll scrollbar-hide">
 
-               <div class="h-full w-[9%] flex justify-start">
-                <a href="/NotesMain" class="p-2 mr-5 mt-3 w-full h-full flex justify-center text-2xl text-white font-bold">Back</a>
+               <div class="h-10 w-[9%] flex justify-start">
+                <a href="/NotesMain" class="p-2 mr-5 mt-3 w-full h-full flex justify-center group"> <img src="../img/arrow.png " alt="" class="h-7 group-hover:scale-105 transition-all duration-150 filter invert"></a>
                     <!-- <span class="p-2 mr-5 mt-3 w-full h-full flex justify-center text-2xl text-white font-bold">Back</span> -->
                </div>
 
@@ -88,15 +100,16 @@
                     
                     <!-- content -->
                 
-                    <div class="w-full h-[73%] overflow-y-scroll scrollbar-hide " id="content">
+                    <div class="w-full h-[70%] overflow-y-scroll scrollbar-hide " id="content">
                         <span contenteditable="true" class="p-2 mr-5 mt-5 w-full h-full flex justify-start text-base text-white font-bold outline-none ">{{ $catatan_pribadi->deskripsi }}</span>
                     </div>
                 
                     {{-- button save and delete --}}
-                    <div class="flex flex-col justify-end mt-4">
-                        <div class="flex justify-end items-end gap-5 pr-5">
-                            <button onclick="getData()" class=" text-black w-28 h-10 rounded-md bg-green-400/50 hover:bg-green-400 hover:scale-105 transition-all font-semibold" >Save</button>
-                            <button onclick="" class=" text-black w-28 h-10 rounded-md bg-red-400/50 hover:bg-red-400  hover:scale-105 transition-all font-semibold">Delete</button>
+                    <div class="flex flex-col justify-end ">
+                        <div class="flex justify-end items-end h-full">
+                            {{-- <button onclick="getData()" class=" text-black w-28 h-10 rounded-md bg-green-400/50 hover:bg-green-400 hover:scale-105 transition-all font-semibold" >Save</button>
+                            <button onclick="" class=" text-black w-28 h-10 rounded-md bg-red-400/50 hover:bg-red-400  hover:scale-105 transition-all font-semibold">Delete</button> --}}
+                            <button class="bg-green-800 scale-105 w-12 h-12 rounded-full flex justify-center items-center hover:scale-105 duration-150 transition-all"><img src="../img/save.png " class=" filter invert w-5 group-hover:scale-110 transition-all duration-150" alt=""></button>
                         </div>
                         
                     </div>
@@ -104,6 +117,10 @@
                   
                 
                 @endif
+               </div>
+               <div class="flex flex-col justify-between w-[5%] h-full pt-5 group pr-9 pb-14">
+                <button class="w-[90%] "><img src="../img/delete.png " class="w-9 group-hover:scale-110 transition-all duration-150" alt=""></button>
+                {{-- <button class="bg-green-800 scale-105 w-12 h-12 rounded-full flex justify-center items-center"><img src="../img/save.png " class=" filter invert w-5 group-hover:scale-110 transition-all duration-150" alt=""></button> --}}
                </div>
                
             </div>
