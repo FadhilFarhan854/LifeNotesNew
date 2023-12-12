@@ -99,16 +99,8 @@
                     </div>
                     <!-- box2 -->
                     @foreach ($catatan_pribadi as $catatan)
-                        <divs
+                        <a href="/Catatan/{{ $catatan->id_catatan }}"
                             class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200 group cursor-pointer overflow-hidden">
-                            <script>
-                                const divElement = document.querySelector('divs'); // Replace 'div' with the ID or class of your actual div element
-                                divElement.addEventListener('click', function() {
-                                    window.location.href =
-                                        '/Catatan/{{ $catatan->id_catatan }}'; // Replace 'https://www.example.com' with the URL of your desired page
-                                });
-                            </script>
-
                             <div class="w-full h-[20%] flex justify-start p-5 ">
                                 <span
                                     class="text-white font-bold text-2xl flex justify-start items-start ">{{ $catatan->judul }}</span>
@@ -117,13 +109,8 @@
                                 <span
                                     class="text-white font-bold text-sm flex justify-start items-start ">{{ $catatan->deskripsi }}</span>
                             </div>
-                        </divs>
+                        </a>
                     @endforeach
-
-
-
-
-
                 </div>
             </div>
         </div>

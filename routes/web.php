@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/NotesMain', [NotesMainController::class, 'index']);
+Route::get('/TambahCatatan', [NotesMainController::class, 'create']);
 
 Route::post('/bRegister', [UserController::class, 'register']);
 Route::post('/bLogin',  [UserController::class, 'Login']);

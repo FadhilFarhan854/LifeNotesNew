@@ -31,12 +31,7 @@
             <div class="w-full h-80 mt-28">
                 <div class="w-[60%] flex-col pl-10">
                     <span class="text-white font-bold text-8xl ">Life Notes</span><br>
-                    <span class=" text-white font-semibold text-base justify-start "> Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Quidem magnam suscipit consectetur animi id quaerat natus repellat
-                        soluta aspernatur unde itaque et expedita fugiat ipsa commodi, adipisci illum voluptate non.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio labore blanditiis provident
-                        accusantium beatae, tenetur eaque voluptas quo est eveniet nostrum iusto tempora nam doloribus
-                        quos illum qui non commodi.</span>
+                    <span class=" text-white font-semibold text-base justify-start ">LifeNotes is like your all-in-one buddy for jotting down personal stuff, managing your to-dos, and keeping tabs on your money game. It's got this super easy vibe, making it a breeze to capture those important moments, set your daily goals, and track where your money's going. LifeNotes is all about making your life simpler and more organized – your go-to sidekick for navigating through the ups and downs of your daily grind.</span>
                     <div class="flex justify-start mt-5 gap-3">
 
                         <a href="/Login"

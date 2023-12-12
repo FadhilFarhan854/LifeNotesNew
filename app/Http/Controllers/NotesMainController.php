@@ -16,4 +16,14 @@ class NotesMainController extends Controller
         $catatan_pribadi = catatan_pribadi::where('id_user', $id_user)->get();
         return view('/NotesMain', compact('catatan_pribadi'));
     }
+    public  function create()
+    {
+        $id_user = Session::get('id');
+        catatan_pribadi::create([
+            'id_user' => $id_user,
+            'judul' => 'Title',
+            'deskripsi' => 'Description',
+        ]);
+        return redirect('/NotesMain');
+    }
 }
