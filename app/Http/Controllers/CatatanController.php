@@ -36,7 +36,33 @@ class CatatanController extends Controller
             return redirect('/NotesMain');
         }
     }
-    public function save(Request $request)
-    {
+   
+
+    public function update(Request $request, $id){
+    
+    // Validate the request data
+    $request->validate([
+        'judul' => 'required',
+        'deskripsi' => 'required',
+        // Add other validation rules as needed
+    ]);
+
+    // Find the record in the database
+    $catatan = catatan_pribadi::find($id);
+
+    // Check if the record exists
+    if (!$catatan) {
+        return response()->json(['error' => 'Record not found'], 404);
+    }
+
+    // Update the record with the new data
+    $catatan->judul = $request->input('judul');
+    $catatan->deskripsi = $request->input('deskripsi');
+    // Add other fields as needed
+
+    // Save the changes
+    $catatan->save();
+
+    return response()->json(['message' => 'Record updated successfully']);
     }
 }

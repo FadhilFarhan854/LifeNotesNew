@@ -36,7 +36,7 @@ Route::get('/Register', function () {
 
 Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
 Route::get('/HapusCatatan/{id_catatan}', [CatatanController::class, 'delete']);
-Route::post('/SaveCatatan', [CatatanController::class, 'save']);
+Route::put('/update/{id}', [CatatanController::class, 'update'])->name('update');
 
 Route::get('/LaporanKeuangan', function () {
     return view('laporanKeuangan');
@@ -50,3 +50,5 @@ Route::get('/Todolist', function () {
 Route::get('/dataKeuangan', function () {
     return view('dataKeuangan');
 });
+
+

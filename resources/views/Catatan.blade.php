@@ -32,6 +32,35 @@
     document.addEventListener("DOMContentLoaded", function() {
         getData();
     });
+
+    function updateData() {
+        var titleContent = document.getElementById('title').innerText;
+        var contentContent = document.getElementById('content').innerText;
+
+        // Get the ID of the current catatan from the URL
+        var catatanId = window.location.pathname.split('/').pop();
+
+        // Send an AJAX request to update the record
+        fetch(`/update/${catatanId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            },
+            body: JSON.stringify({
+                judul: titleContent,
+                deskripsi: contentContent,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+            // You can add further actions or UI updates here
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
 </script>
 
 <body class="bg-[#1F2124] h-[100vh]  w-full">
@@ -114,15 +143,10 @@
                         {{-- button save --}}
                         <div class="flex flex-col justify-end ">
                             <div class="flex justify-end items-end h-full">
-                                {{-- <button onclick="getData()" class=" text-black w-28 h-10 rounded-md bg-green-400/50 hover:bg-green-400 hover:scale-105 transition-all font-semibold" >Save</button>
-                                <button onclick="" class=" text-black w-28 h-10 rounded-md bg-red-400/50 hover:bg-red-400  hover:scale-105 transition-all font-semibold">Delete</button> --}}
-                                <button
-                                    class="bg-green-800 scale-105 w-12 h-12 rounded-full flex justify-center items-center hover:scale-105 duration-150 transition-all"><img
-                                        src="../img/save.png "
-                                        class=" filter invert w-5 group-hover:scale-110 transition-all duration-150"
-                                        alt=""></button>
+                                <button onclick="updateData()" class="bg-green-800 scale-105 w-12 h-12 rounded-full flex justify-center items-center hover:scale-105 duration-150 transition-all">
+                                    <img src="../img/save.png" class="filter invert w-5 group-hover:scale-110 transition-all duration-150" alt="">
+                                </button>
                             </div>
-
                         </div>
                     @endif
                 </div>
