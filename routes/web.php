@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/NotesMain', [NotesMainController::class, 'index']);
 Route::get('/TambahCatatan', [NotesMainController::class, 'create']);
+Route::get('/Search', [CatatanController::class, 'search']);
 
 Route::post('/bRegister', [UserController::class, 'register']);
 Route::post('/bLogin',  [UserController::class, 'Login']);
@@ -34,7 +35,8 @@ Route::get('/Register', function () {
 });
 
 Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
-Route::get('/Search', [CatatanController::class, 'search']);
+Route::get('/HapusCatatan/{id_catatan}', [CatatanController::class, 'delete']);
+Route::post('/SaveCatatan', [CatatanController::class, 'save']);
 
 Route::get('/LaporanKeuangan', function () {
     return view('laporanKeuangan');

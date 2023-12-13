@@ -13,7 +13,10 @@ class NotesMainController extends Controller
     public function index()
     {
         $id_user = Session::get('id');
-        $catatan_pribadi = catatan_pribadi::where('id_user', $id_user)->get();
+        $catatan_pribadi = catatan_pribadi::where('id_user', $id_user)
+            ->orderBy('id_catatan', 'DESC')
+            ->get();
+
         return view('/NotesMain', compact('catatan_pribadi'));
     }
     public  function create()

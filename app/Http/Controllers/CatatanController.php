@@ -15,15 +15,28 @@ class CatatanController extends Controller
         $catatan_pribadi = catatan_pribadi::where('id_catatan', $id_catatan)->first();
         return view('/Catatan', ['catatan_pribadi' => $catatan_pribadi]);
     }
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $id_user = Session::get('id');
         $search = $request->search;
         $catatan_pribadi = catatan_pribadi::where('judul', $search)->where('id_user', $id_user)->get();
         return view('/NotesMain', ['catatan_pribadi' => $catatan_pribadi]);
     }
-    public function create(){
+    public function create()
+    {
         $id_user = Session::get('id');
         $catatan_pribadi = catatan_pribadi::where('id_user', $id_user)->get();
         return view('/NotesMain', ['catatan_pribadi' => $catatan_pribadi]);
+    }
+    public function delete($id)
+    {
+        $catatan = catatan_pribadi::find($id);
+        if ($catatan) {
+            $catatan->delete();
+            return redirect('/NotesMain');
+        }
+    }
+    public function save(Request $request)
+    {
     }
 }
