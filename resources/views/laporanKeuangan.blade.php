@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @vite('resources/css/app.css')
-    <!-- <style>
+     {{-- <style>
          * {
         border: 1px solid red;
     }
-    </style> -->
+    </style> --}}
 </head>
 <body class="bg-[#1F2124] h-[100vh]  w-full">
     <div class="flex w-full h-full">
@@ -25,15 +25,27 @@
                 
             </div>
             <!-- sidebar -->
-            <div class="w-full h-1/3 flex-col items-center mt-0" >
+            <div class="w-full h-1/3 flex-col items-center mt-0">
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
-                    <div class="w-[80%] bg-[#3c3f43]  h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Catatan</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">To-do List</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Forum</span></div>
+                    <button onclick="window.location.href='/NotesMain'"
+                    class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Catatan</span>
+                    </button>
+                    <button
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">To-do List</span>
+                    </button>
+                    <button
+                    class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                        <span class="text-lg font-bold text-white">Laporan Keuangan</span>
+                    </button>
+                    <button
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Forum</span>
+                    </button>
                 </div>
-               
-                
+
+
             </div>
             
 
@@ -43,211 +55,56 @@
             <div class="w-full h-[10%] bg-[#1F2124] ">
 
                 <!-- upper bar -->
-                <div class="w-full h-[70%] flex  bg-[#343941] rounded-xl mt-2 ">
+                <div class="w-full h-[70%] flex  bg-[#343639]  rounded-xl mt-2 justify-between">
                    <div class="w-[25%] h-full flex justify-start items-start cursor-default hover:scale-105 transition-all duration-200">
-                        <img src="../img/money.png" alt="" class="h-[75%] ml-4 my-auto">
+                        <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
                         <span class=" w-[70%] h-full text-white text-base p-3 ">Saldo:  Rp500.000</span>
                    </div>
-                   <div class="w-[75%] h-full flex justify-end items-end cursor-default">
-                        <div class="w-[40] h-full flex justify-end items-end cursor-default hover:scale-105 transition-all duration-200">
-                            <img src="../img/money.png" alt="" class="h-[75%] ml-4 my-auto">
-                            <span class="  h-full text-white text-base p-3 my-auto">Pemasukan:  Rp500.000</span>
-                            <img src="../img/money.png" alt="" class="h-[75%] ml-4 my-auto ">
-                            <span class="  h-full text-white text-base p-3 my-auto">Pengeluaran:  Rp500.000</span>
-                     </div>
-                       
+
+                   <div class="w-[30%] h-[80%] my-auto pr-2">
+                        <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2" placeholder="Search ">
                    </div>
+                   
                    
                 </div>
                 
             </div>
             <!-- box container -->
-            <div class="w-full   bg-[#343941] rounded-2xl relative">
+            <div class="w-full h-[85vh]  bg-[#00000075]  rounded-2xl relative">
                 
-                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
-                <div class="w-full h-[85vh] grid grid-cols-2  gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
+                {{-- button --}}
+                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3" onclick="">+</span></a>
+                
+                <div class="w-full h-auto grid grid-cols-2  gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     <!-- Box-1 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
+                    <div class="w-[100%] h-44 bg-[#1F2124]  rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-black transition-all duration-300">
+                        <div class="w-full h-[20%] flex justify-start items-start shadow-black shadow-sm">
+                            <div class="w-auto h-full pl-4">
+                                <span class="w-full h-full  my-auto text-lg text-white font-semibold flex flex-col justify-center items-center">Title</span>
                             </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
+                            
                         </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
+                        <div class=" w-full h-[80%] flex  gap-16 items-start justify-start pt-8">
+                            
+                            <div class="w-[33%] h-[50%] flex-col justify-center items-center">                                  
+                                <span class="text-white font-bold text-lg w-full flex items-center justify-center h-[50%]"> Pemasukan :</span>
+                                <span class="text-green-500 font-semibold text-base flex w-full items-center justify-center h-[50%]"> Rp.500000</span>                                   
                             </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
+                            <div class="w-[33%] h-[50%] flex-col justify-center items-center">                                  
+                                <span class="text-white font-bold text-lg w-full flex items-center justify-center h-[50%]"> Pengeluaran :</span>
+                                <span class="text-red-500 font-semibold text-base flex w-full items-center justify-center h-[50%] "> Rp.500000</span>                                   
                             </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
+                            <div class="w-[33%] h-[50%] flex-col justify-center items-center">                                  
+                                <span class="text-white font-bold text-lg w-full flex items-center justify-center h-[50%]"> Total :</span>
+                                <span class="text-white font-semibold text-base flex w-full items-center justify-center h-[50%]"> Rp.5000000</span>                                   
                             </div>
+                            
+                            
                         </div>
                     </div>
                     
-                    <!-- Box-2 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
-                            </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <!-- Box-3 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
-                            </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Box-3 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
-                            </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Box-3 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
-                            </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Box-3 -->
-                    <div class="w-[100%] h-52 bg-[#1F2124] rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-[#d3d174] transition-all duration-300">
-                        <div class="w-full h-[30%] flex justify-start items-start shadow-black shadow-sm">
-                            <div class="w-[10%] flex justify-center items-center h-full ">
-                                <span class="w-full h-[80%] my-auto text-5xl text-white font-semibold flex justify-end">12</span>
-                            </div>
-                            <div class=" w-[90%] h-[70%] flex-col justify-end items-end my-auto pl-3">
-                                <div class="w-full h-[50%] ">
-                                    <span class="text-white font-semibold text-base"> Monday </span>
-                                </div>
-                                <div class="w-full h-[50%]">
-                                    <span class="text-white font-semibold text-base ">23 nov</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" w-full h-[70%] flex  gap-16 items-center justify-center">
-                            <div class="w-33% h-[50%] flex-col items-center">
-                                <span class="text-white font-semibold text-xl "> Total :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> Pemasukan :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                            <div class="w-33% h-[50%] flex-col">
-                                <span class="text-white font-semibold text-xl"> pengeluaran :</span><br>
-                                <span class="text-white font-semibold text-xl"> 500k</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     
                     
