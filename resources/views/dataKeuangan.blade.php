@@ -73,7 +73,8 @@
             <div class="w-full h-[85vh]  bg-[#00000075]  rounded-2xl relative">
                 
                 {{-- button --}}
-                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
+                <button class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center" onclick="togglePopup()"><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
+                
                 {{-- title --}}
                 <div class="h-20 w-full border-b-2 border-black pt-5 pb-5 pl-8">
                     <span class="w-full h-full text-3xl text-white font-semibold ">Title</span>
@@ -153,6 +154,15 @@
         </div>
         
     </div>
-    
+    {{-- script n popup --}}
+    <script>
+        
+        function togglePopup() {
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('hidden');
+        }
+        </script>
+        <x-popUp>
+        </x-popUp>
 </body>
 </html>

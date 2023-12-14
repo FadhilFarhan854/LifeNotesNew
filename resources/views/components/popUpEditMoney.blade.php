@@ -1,4 +1,4 @@
-<div id="popup" class="fixed inset-0 items-center justify-center hidden bg-gray-800 bg-opacity-50 w-full h-full pt-32">
+<div id="popupEditMoney" class="fixed inset-0 items-center justify-center hidden bg-gray-800 bg-opacity-50 w-full h-full pt-32">
     <div class="w-[35%] h-[70%] bg-[#1F2124] rounded-lg row p-8 pt-1 shadow-md shadow-[#000000] m-auto flex flex-col justify-start">
         {{-- X-button --}}
         <div class="w-full h-[15%] flex justify-between px-2">
@@ -10,8 +10,8 @@
             <div class="h-[80%]">
                 <form action="" class="mt-1">
                     <div class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-black pb-1"> 03-02-2023</div>
-                    <input type="text" class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-black mt-6 pb-1"  placeholder="Description">
-                    <input type="text" class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-black mt-6 pb-1" placeholder="Nominal">
+                    <input type="text" class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-black mt-6 pb-1" value="{{-- kasih value disini dari db --}}"  placeholder="Description">
+                    <input type="text" class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-black mt-6 pb-1" value="{{-- kasih value disini dari db --}}" placeholder="Nominal">
                 </form> 
                 
             </div>
