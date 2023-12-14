@@ -92,7 +92,7 @@
                             </thead>
                             <tbody>
                                 <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-20237</span></td>
+                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
                                     <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
                                     <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
                                   </tr>
