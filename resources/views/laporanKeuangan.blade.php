@@ -30,27 +30,23 @@
             <div class="w-full h-1/3 flex-col items-center mt-0">
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
                     <button onclick="window.location.href='/NotesMain'"
-                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Catatan</span>
                     </button>
-                    <button
+                    <button onclick="window.location.href='/Todolist'"
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">To-do List</span>
                     </button>
-                    <button
-                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                    <button onclick="window.location.href='/LaporanKeuangan'"
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Laporan Keuangan</span>
                     </button>
-                    <button
+                    <button onclick="window.location.href='/Forum'"
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Forum</span>
                     </button>
                 </div>
-
-
             </div>
-
-
         </div>
 
         <div class="w-[78%] h-full  flex-col">
@@ -63,8 +59,7 @@
                         <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
                         @foreach ($catatan_keuangan as $item)
                             @php
-                                $saldo = 0;
-                                $saldo = $saldo + $item->sum_without_minus - $item->sum_with_minus;
+                                $saldo = $item->sum;
                             @endphp
                         @endforeach
                         @if ($saldo > 0)
@@ -75,8 +70,11 @@
                     </div>
 
                     <div class="w-[30%] h-[80%] my-auto pr-2">
-                        <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2"
-                            placeholder="Search ">
+                        <form action="/SearchCatatanKeuangan" method="get">
+                            @csrf
+                            <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2"
+                                placeholder="Search " name="search">
+                        </form>
                     </div>
 
 
@@ -89,9 +87,9 @@
 
                 {{-- button --}}
                 <a
-                    href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span
+                    href="/TambahCatatanKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span
                         class="text-black text-6xl font-bold flex items-center justify-center -mt-3"
-                        onclick="/dataKeuangan">+</span></a>
+                        >+</span></a>
                 <!-- Box-1 -->
                 <div class="w-full h-auto grid grid-cols-2 gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     @foreach ($catatan_keuangan as $item)
@@ -146,7 +144,7 @@
                                     @else
                                         <span
                                             class="text-white font-semibold text-base flex w-full items-center justify-center h-[50%]">
-                                            Rp. {{$total}}</span>
+                                            Rp. {{ $total }}</span>
                                     @endif
                                 </div>
                             </div>

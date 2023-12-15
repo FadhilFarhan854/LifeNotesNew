@@ -61,8 +61,7 @@
                         <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
                         @foreach ($catatan_keuangan as $item)
                             @php
-                                $saldo = 0;
-                                $saldo = $saldo + $item->sum_without_minus - $item->sum_with_minus;
+                                $saldo = $item->sum;
                             @endphp
                         @endforeach
                         @if ($saldo > 0)
@@ -94,7 +93,7 @@
 
                 <div class="h-20 w-full border-b-2 border-black pt-5 pb-5 pl-8">
                     @if ($isi_catatan_keuangan)
-                    <span class="w-full h-full text-3xl text-white font-semibold ">{{$isi_catatan_keuangan[0]->judul}}</span>
+                    <span class="w-full h-full text-3xl text-white font-semibold ">{{$isi_catatan_keuangan[0]->title}}</span>
                     @endif
                 </div>
                 {{-- Table --}}

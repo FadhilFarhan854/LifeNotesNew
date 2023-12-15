@@ -60,4 +60,33 @@ class CatatanKeuanganController extends Controller
 
         return view('/dataKeuangan', compact('isi_catatan_keuangan', 'catatan_keuangan'));
     }
+    public function search(Request $request)
+    {
+        $id_user = Session::get('id');
+        $search = $request->search;
+        $catatan_keuangan = DB::table('catatan_keuangan')
+            ->leftJoin('isi_catatan_keuangan', 'catatan_keuangan.id_catatan', '=', 'isi_catatan_keuangan.id_catatan')
+            ->select(
+                'catatan_keuangan.id_catatan',
+                'catatan_keuangan.judul',
+                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan LIKE "-%" THEN CAST(SUBSTRING(isi_catatan_keuangan.keuangan, 2) AS DECIMAL) ELSE 0 END) AS sum_with_minus'),
+                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum_without_minus'),
+                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum')
+            )
+            ->where('catatan_keuangan.id_user', $id_user)
+            ->where('catatan_keuangan.judul', $search)
+            ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
+            ->orderBy('catatan_keuangan.id_catatan', 'DESC')
+            ->get();
+
+        return view('/LaporanKeuangan', ['catatan_keuangan' => $catatan_keuangan]);
+    }
+    public function create(){
+        $id_user = Session::get('id');
+        catatan_keuangan::create([
+            'id_user' => $id_user,
+            'judul' => 'Title',
+        ]);
+        return redirect('/LaporanKeuangan');
+    }
 }

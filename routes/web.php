@@ -41,6 +41,9 @@ Route::put('/update/{id}', [CatatanController::class, 'update'])->name('update')
 
 Route::get('/LaporanKeuangan', [CatatanKeuanganController::class, 'index']);
 Route::get('/dataKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'show']);
+Route::get('/SearchCatatanKeuangan', [CatatanKeuanganController::class, 'search']);
+Route::get('/TambahCatatanKeuangan', [CatatanKeuanganController::class, 'create']);
+
 Route::get('/Forum', function () {
     return view('Forum');
 });
