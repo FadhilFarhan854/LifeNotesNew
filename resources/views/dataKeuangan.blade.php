@@ -92,56 +92,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
+                                <tr class="text-white min-h-[20px] group cursor-pointer" onclick="togglePopupEdit()">
+                                    <td class="border-[3px] border-white py-3 group-hover:scale-105 transition-all duration-200 "><span class="flex w-full justify-center">03-02-2023</span></td>
+                                    <td class="border-[3px] border-white py-3 group-hover:scale-105 transition-all duration-200"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
+                                    <td class="border-[3px] border-white py-3 group-hover:scale-105 transition-all duration-200"><span class="flex w-full justify-center">500000</span></td>                            
                                   </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
-                                  <tr class="text-white min-h-[20px] ">
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">03-02-2023</span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span></td>
-                                    <td class="border-[3px] border-white py-3"><span class="flex w-full justify-center">500000</span></td>                            
-                                  </tr>
+                                  
                                   
                             </tbody>
                         </table>
@@ -154,15 +110,21 @@
         </div>
         
     </div>
-    {{-- script n popup --}}
+    {{-- script n popup components--}}
     <script>
         
         function togglePopup() {
         var popup = document.getElementById('popup');
         popup.classList.toggle('hidden');
         }
+        function togglePopupEdit() {
+        var popup = document.getElementById('popupEdit');
+        popup.classList.toggle('hidden');
+        }
         </script>
-        <x-popUp>
-        </x-popUp>
+
+        <x-popUp> </x-popUp>
+       
+        <x-popUpEditMoney></x-popUpEditMoney>
 </body>
 </html>

@@ -73,11 +73,11 @@
             <div class="w-full h-[85vh]  bg-[#00000075]  rounded-2xl relative">
                 
                 {{-- button --}}
-                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3" onclick="">+</span></a>
+                <a href="/dataKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span class="text-black text-6xl font-bold flex items-center justify-center -mt-3" onclick="/dataKeuangan">+</span></a>
                 
                 <div class="w-full h-auto grid grid-cols-2  gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     <!-- Box-1 -->
-                    <div class="w-[100%] h-44 bg-[#1F2124]  rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-black transition-all duration-300">
+                    <a href="/dataKeuangan" class="w-[100%] h-44 bg-[#1F2124]  rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-black transition-all duration-300 cursor-pointer">
                         <div class="w-full h-[20%] flex justify-start items-start shadow-black shadow-sm">
                             <div class="w-auto h-full pl-4">
                                 <span class="w-full h-full  my-auto text-lg text-white font-semibold flex flex-col justify-center items-center">Title</span>
@@ -101,7 +101,8 @@
                             
                             
                         </div>
-                    </div>
+                    </a>
+                    
                     
                     
                     
