@@ -26,7 +26,7 @@
     /* * {
         border: 1px solid red;
     } */
-    
+
     </style>
 </head>
 
@@ -41,7 +41,7 @@
                 <div class="w-full flex justify-center items-center ">
                     <span class="text-white font-bold text-3xl ">LIFE NOTES</span>
                 </div>
-                
+
             </div>
 
             <!-- sidebar -->
@@ -52,7 +52,7 @@
                     <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div>
                     <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Forum</span></div>
                 </div>
-            </div>  
+            </div>
         </div>
 
         <div class="w-[78%] h-full  flex-col">
@@ -67,10 +67,10 @@
             <div class="flex w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide">
                 <div class="h-auto">
                 <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
-                    
+
                     {{-- item 1 --}}
                     <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
+
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
                                 <h1 class="font-semibold text-xl">Judul</h1>
@@ -81,12 +81,12 @@
 
                         <div class="h-[55%]">
                             <p class="truncate-overflow text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>    
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>
                             <div class="flex cursor-pointer" onclick="togglePopup()">
                                 <a class="text-blue-500 text-sm">Baca Selengkapnya</a>
                             </div>
-                        </div>   
-                                  
+                        </div>
+
                         <div class="flex justify-end h-[19%]">
                             <div class="flex pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -95,13 +95,13 @@
                                 <p class="text-xs m-2.5">120</p>
                             </div>
                         </div>
-                      
+
                     </div>
 
-                
+
                     {{-- item 2 --}}
                     <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
+
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
                                 <h1 class="font-semibold text-xl">Judul</h1>
@@ -112,12 +112,12 @@
 
                         <div class="h-[55%]">
                             <p class="truncate-overflow text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>    
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>
                             <div class="flex cursor-pointer" onclick="togglePopup()">
                                 <a class="text-blue-500 text-sm">Baca Selengkapnya</a>
                             </div>
-                        </div>   
-                              
+                        </div>
+
                         <div class="flex justify-end h-[19%]">
                             <div class="flex pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -126,12 +126,12 @@
                                 <p class="text-xs m-2.5">120</p>
                             </div>
                         </div>
-                  
+
                     </div>
 
                     {{-- item 3 --}}
                     <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
+
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
                                 <h1 class="font-semibold text-xl">Judul</h1>
@@ -142,12 +142,12 @@
 
                         <div class="h-[55%]">
                             <p class="truncate-overflow text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>    
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>
                             <div class="flex cursor-pointer" onclick="togglePopup()">
                                 <a class="text-blue-500 text-sm">Baca Selengkapnya</a>
                             </div>
-                        </div>   
-                                  
+                        </div>
+
                         <div class="flex justify-end h-[19%]">
                             <div class="flex pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -156,12 +156,12 @@
                                 <p class="text-xs m-2.5">120</p>
                             </div>
                         </div>
-                      
+
                     </div>
 
                     {{-- item 4 --}}
                     <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
+
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
                                 <h1 class="font-semibold text-xl">Judul</h1>
@@ -172,12 +172,12 @@
 
                         <div class="h-[55%]">
                             <p class="truncate-overflow text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>    
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? </p>
                             <div class="flex cursor-pointer" onclick="togglePopup()">
                                 <a class="text-blue-500 text-sm">Baca Selengkapnya</a>
                             </div>
-                        </div>   
-                                  
+                        </div>
+
                         <div class="flex justify-end h-[19%]">
                             <div class="flex pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -186,12 +186,12 @@
                                 <p class="text-xs m-2.5">120</p>
                             </div>
                         </div>
-                      
+
                     </div>
 
                     {{-- item 5 --}}
                     <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
+
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
                                 <h1 class="font-semibold text-xl">Judul</h1>
@@ -201,12 +201,12 @@
                         </div>
 
                         <div class="h-[55%]">
-                            <p class="truncate-overflow text-base">cabo reiciendictetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendise? </p>    
+                            <p class="truncate-overflow text-base">cabo reiciendictetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendise? </p>
                             <div class="flex cursor-pointer" onclick="togglePopup()">
                                 <a class="text-blue-500 text-sm">Baca Selengkapnya</a>
                             </div>
-                        </div>   
-                                  
+                        </div>
+
                         <div class="flex justify-end h-[19%]">
                             <div class="flex pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -215,13 +215,13 @@
                                 <p class="text-xs m-2.5">120</p>
                             </div>
                         </div>
-                      
+
                     </div>
 
 
                 <!-- pop-up container -->
                 <div id="popup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
-           
+
                     <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-white onclick="togglePopup()">
                         <span class="close text-white hover:text-gray-300 text-2xl cursor-pointer" onclick="togglePopup()">&times;</span>
 
@@ -230,17 +230,17 @@
                                 <h1 class="font-semibold text-xl">Judul</h1>
                             <p class="text-sm mb-3">Author</p>
                             </div>
-                    
+
                             <p class="text-xs mt-1">12 h</p>
                         </div>
 
-                
+
                         <div class="h-auto">
                             <p class="text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat a ut sint. Repellendus delectus, neque sit tempora, deserunt eaque quaerat adipisci odit reprehenderit ducimus totam distinctio, ipsam cumque aut tenetur? ipsum dolor sit amet, consectetur adipisicing elit. Quidem voluptates, ex optio suscipit sed soluta blanditiis iste porro dignissimos voluptatem tempore, in quod illo rerum. Nisi quia impedit distinctio voluptatem! ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime? 
-                            </p>    
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat a ut sint. Repellendus delectus, neque sit tempora, deserunt eaque quaerat adipisci odit reprehenderit ducimus totam distinctio, ipsam cumque aut tenetur? ipsum dolor sit amet, consectetur adipisicing elit. Quidem voluptates, ex optio suscipit sed soluta blanditiis iste porro dignissimos voluptatem tempore, in quod illo rerum. Nisi quia impedit distinctio voluptatem! ipsum dolor sit amet, consectetur adipiscing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis sequi beatae dolore sunt deleniti iusto reiciendis non. Illum velit explicabo reiciendis in. Veniam nobis debitis neque ad enim fuga dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat veritatis, voluptatem vel accusantium aliquam, dolorum nobis veniam voluptatum velit voluptas laborum aut repellat obcaecati labore eum quod earum maxime?
+                            </p>
                         </div>
-                          
+
                         <div class="h-auto mt-4">
                             <div class="flex justify-end pr-4">
                                 <button class="round-button flex items-center shadow-3xl" onclick="toggleLike(this)">
@@ -259,7 +259,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
                 </button>
-                
+
 
                     {{-- tambah item dari sini --}}
 
@@ -267,13 +267,13 @@
             </div>
         </div>
         </div>
-        
+
     </div>
 
     <script>
         function toggleLike(button) {
             var likeImage = button.querySelector('.heart-icon');
-    
+
             if (likeImage.src.endsWith('grey_heart.png')) {
                 likeImage.src = '../img/red_heart.png';
             } else {

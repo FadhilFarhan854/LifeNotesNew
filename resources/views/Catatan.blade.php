@@ -83,21 +83,19 @@
                         class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Catatan</span>
                     </button>
-                    <button
+                    <button onclick="window.location.href='/Todolist'"
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">To-do List</span>
                     </button>
-                    <button
+                    <button onclick="window.location.href='/LaporanKeuangan'"
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Laporan Keuangan</span>
                     </button>
-                    <button
+                    <button onclick="window.location.href='/Forum'"
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Forum</span>
                     </button>
                 </div>
-
-
             </div>
 
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CatatanController;
+use App\Http\Controllers\CatatanKeuanganController;
 use App\Http\Controllers\NotesMainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -38,17 +39,11 @@ Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
 Route::get('/HapusCatatan/{id_catatan}', [CatatanController::class, 'delete']);
 Route::put('/update/{id}', [CatatanController::class, 'update'])->name('update');
 
-Route::get('/LaporanKeuangan', function () {
-    return view('laporanKeuangan');
-});
+Route::get('/LaporanKeuangan', [CatatanKeuanganController::class, 'index']);
+Route::get('/dataKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'show']);
 Route::get('/Forum', function () {
     return view('Forum');
 });
 Route::get('/Todolist', function () {
     return view('Todolist');
 });
-Route::get('/dataKeuangan', function () {
-    return view('dataKeuangan');
-});
-
-
