@@ -57,16 +57,18 @@
                     <div
                         class="w-[25%] h-full flex justify-start items-start cursor-default hover:scale-105 transition-all duration-200">
                         <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
-                        @foreach ($catatan_keuangan as $item)
-                            @php
-                                $saldo = $item->sum;
-                            @endphp
-                        @endforeach
+                        @php
+                            $saldo = 0;
+                            foreach ($catatan_keuangan as $item) {
+                                $saldo += $item->sum;
+                            }
+                        @endphp
                         @if ($saldo > 0)
-                            <span class=" w-[70%] h-full text-white text-base p-3 ">Saldo: {{ $saldo }}</span>
+                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: {{ $saldo }}</span>
                         @else
-                            <span class=" w-[70%] h-full text-white text-base p-3 ">Saldo: 0</span>
+                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: 0</span>
                         @endif
+
                     </div>
 
                     <div class="w-[30%] h-[80%] my-auto pr-2">
@@ -88,10 +90,11 @@
                 {{-- button --}}
                 <a
                     href="/TambahCatatanKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span
-                        class="text-black text-6xl font-bold flex items-center justify-center -mt-3"
-                        >+</span></a>
+                        class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
                 <!-- Box-1 -->
-                <div class="w-full h-auto grid grid-cols-2 gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
+                <div
+                {{-- TAMBAHIN H-MAX SOALNYA ITEM ITEM NYA NGEBUG --}}
+                    class="w-full h-auto grid grid-cols-2 gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     @foreach ($catatan_keuangan as $item)
                         @php
                             $total = $item->sum_without_minus - $item->sum_with_minus;

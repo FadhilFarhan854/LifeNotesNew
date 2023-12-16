@@ -59,15 +59,16 @@
                     <div
                         class="w-[25%] h-full flex justify-start items-start cursor-default hover:scale-105 transition-all duration-200">
                         <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
-                        @foreach ($catatan_keuangan as $item)
-                            @php
-                                $saldo = $item->sum;
-                            @endphp
-                        @endforeach
+                        @php
+                            $saldo = 0;
+                            foreach ($catatan_keuangan as $item) {
+                                $saldo += $item->sum;
+                            }
+                        @endphp
                         @if ($saldo > 0)
-                            <span class=" w-[70%] h-full text-white text-base p-3 ">Saldo: {{ $saldo }}</span>
+                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: {{ $saldo }}</span>
                         @else
-                            <span class=" w-[70%] h-full text-white text-base p-3 ">Saldo: 0</span>
+                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: 0</span>
                         @endif
                     </div>
 
@@ -92,8 +93,9 @@
                 {{-- title --}}
 
                 <div class="h-20 w-full border-b-2 border-black pt-5 pb-5 pl-8">
-                    @if ($isi_catatan_keuangan)
-                    <span class="w-full h-full text-3xl text-white font-semibold ">{{$isi_catatan_keuangan[0]->title}}</span>
+                    @if ($catatan_keuangan != null)
+                        <span
+                            class="w-full h-full text-3xl text-white font-semibold ">{{ $catatan_keuangan[0]->judul }}</span>
                     @endif
                 </div>
                 {{-- Table --}}
