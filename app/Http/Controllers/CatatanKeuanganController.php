@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\isi_catatan_keuangan;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+
 
 class CatatanKeuanganController extends Controller
 {
@@ -22,7 +24,7 @@ class CatatanKeuanganController extends Controller
                 'catatan_keuangan.judul',
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan LIKE "-%" THEN CAST(SUBSTRING(isi_catatan_keuangan.keuangan, 2) AS DECIMAL) ELSE 0 END) AS sum_with_minus'),
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum_without_minus'),
-                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum')
+                DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
             )
             ->where('catatan_keuangan.id_user', $id_user)
             ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
@@ -42,7 +44,7 @@ class CatatanKeuanganController extends Controller
                 'catatan_keuangan.judul',
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan LIKE "-%" THEN CAST(SUBSTRING(isi_catatan_keuangan.keuangan, 2) AS DECIMAL) ELSE 0 END) AS sum_with_minus'),
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum_without_minus'),
-                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum')
+                DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
             )
             ->where('catatan_keuangan.id_user', $id_user)
             ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
@@ -71,7 +73,7 @@ class CatatanKeuanganController extends Controller
                 'catatan_keuangan.judul',
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan LIKE "-%" THEN CAST(SUBSTRING(isi_catatan_keuangan.keuangan, 2) AS DECIMAL) ELSE 0 END) AS sum_with_minus'),
                 DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum_without_minus'),
-                DB::raw('SUM(CASE WHEN isi_catatan_keuangan.keuangan NOT LIKE "-%" THEN CAST(isi_catatan_keuangan.keuangan AS DECIMAL) ELSE 0 END) AS sum')
+                DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
             )
             ->where('catatan_keuangan.id_user', $id_user)
             ->where('catatan_keuangan.judul', $search)
@@ -81,12 +83,30 @@ class CatatanKeuanganController extends Controller
 
         return view('/LaporanKeuangan', ['catatan_keuangan' => $catatan_keuangan]);
     }
-    public function create(){
+    public function create()
+    {
         $id_user = Session::get('id');
         catatan_keuangan::create([
             'id_user' => $id_user,
             'judul' => 'Title',
         ]);
         return redirect('/LaporanKeuangan');
+    }
+    public function createData(Request $request, $id_catatan)
+    {
+        if ($request->has('expense')) {
+            $keuanganValue = $request->nominal * (-1);
+        } else {
+            $keuanganValue = $request->nominal;
+        }
+        $currentDate = Carbon::today();
+        $formattedDate = $currentDate->format('Y-m-d');
+        isi_catatan_keuangan::create([
+            'id_catatan' => $id_catatan,
+            'deskripsi' => $request->deskripsi,
+            'keuangan' => $keuanganValue,
+            'tanggal' => $formattedDate,
+        ]);
+        return redirect('/dataKeuangan/' . $id_catatan);
     }
 }

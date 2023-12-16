@@ -145,6 +145,8 @@
         <script>
             function togglePopup() {
                 var popup = document.getElementById('popup');
+                var form = document.getElementById('popupForm');
+
                 popup.classList.toggle('hidden');
             }
 

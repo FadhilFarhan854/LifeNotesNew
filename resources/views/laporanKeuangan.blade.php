@@ -92,8 +92,7 @@
                     href="/TambahCatatanKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span
                         class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
                 <!-- Box-1 -->
-                <div
-                {{-- TAMBAHIN H-MAX SOALNYA ITEM ITEM NYA NGEBUG --}}
+                <div {{-- TAMBAHIN H-MAX SOALNYA ITEM ITEM NYA NGEBUG --}}
                     class="w-full h-auto grid grid-cols-2 gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
                     @foreach ($catatan_keuangan as $item)
                         @php
