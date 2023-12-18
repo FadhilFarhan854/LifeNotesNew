@@ -63,7 +63,7 @@
                             $saldo = 0;
 
                             // KALO SEMISAL MAU TOTAL SALDO KESELURUHAN UBAH $catatan_keuangan MENJADI $isi_catatan_keuangan
-                            foreach ($catatan_keuangan as $item) {
+                            foreach ($isi_catatan_keuangan as $item) {
                                 $saldo += $item->sum;
                             }
                             if ($catatan_keuangan) {
