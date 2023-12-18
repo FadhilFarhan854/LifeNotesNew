@@ -73,8 +73,7 @@
                     </div>
 
                     <div class="w-[30%] h-[80%] my-auto pr-2">
-                        <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2"
-                            placeholder="Search ">
+                        <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2" placeholder="Search">                          
                     </div>
 
 
@@ -92,11 +91,12 @@
 
                 {{-- title --}}
 
-                <div class="h-20 w-full border-b-2 border-black pt-5 pb-5 pl-8">
+                <div class="h-16 w-auto border-b-2 border-black py-3 pl-8 flex">
                     @if ($catatan_keuangan != null)
                         <span
-                            class="w-full h-full text-3xl text-white font-semibold ">{{ $catatan_keuangan[0]->judul }}</span>
+                            class=" h-full text-2xl text-white font-semibold ">{{ $catatan_keuangan[0]->judul }}</span>
                     @endif
+                    <button onclick="toggleTitlePopupEdit()" class="bg-yellow-500 rounded-full h-8 w-8 flex justify-center items-center ml-3"><img src="../img/edit.png" alt="" class="h-[70%]"></button>
                 </div>
                 {{-- Table --}}
 
@@ -154,10 +154,14 @@
                 var popup = document.getElementById('popupEdit');
                 popup.classList.toggle('hidden');
             }
+            function toggleTitlePopupEdit() {
+                var popup = document.getElementById('popupEditTitle');
+                popup.classList.toggle('hidden');
+            }
         </script>
 
         <x-popUp> </x-popUp>
-
+        <x-popUpEditTitle></x-popUpEditTitle>
         <x-popUpEditMoney></x-popUpEditMoney>
 </body>
 

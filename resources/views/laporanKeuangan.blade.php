@@ -72,11 +72,12 @@
                     </div>
 
                     <div class="w-[30%] h-[80%] my-auto pr-2">
-                        <form action="/SearchCatatanKeuangan" method="get">
+                        <form action="/SearchCatatanKeuangan" method="get" class="h-full">
                             @csrf
                             <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2"
                                 placeholder="Search " name="search">
                         </form>
+                        
                     </div>
 
 
@@ -84,16 +85,16 @@
 
             </div>
             <!-- box container -->
-
-            <div class="w-full h-[85vh]  bg-[#00000075]  rounded-2xl relative">
+                    <button onclick="togglePopUpAdd()"
+                    class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-10 right-10 flex justify-center items-center "><span
+                    class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></button>
+            <div class="w-full h-[85vh]  bg-[#00000075]  rounded-2xl relative overflow-y-scroll scrollbar-hide">
 
                 {{-- button --}}
-                <a
-                    href="/TambahCatatanKeuangan"class="absolute rounded-full bg-white w-16 h-16 z-20 bottom-5 right-5 flex justify-center items-center "><span
-                        class="text-black text-6xl font-bold flex items-center justify-center -mt-3">+</span></a>
+                
                 <!-- Box-1 -->
                 <div {{-- TAMBAHIN H-MAX SOALNYA ITEM ITEM NYA NGEBUG --}}
-                    class="w-full h-auto grid grid-cols-2 gap-7 p-5 pt-5 overflow-y-scroll scrollbar-hide ">
+                    class="w-full h-auto  grid grid-cols-2 gap-7 p-5 pt-5 ">
                     @foreach ($catatan_keuangan as $item)
                         @php
                             $total = $item->sum_without_minus - $item->sum_with_minus;
@@ -101,10 +102,20 @@
                         <a href="/dataKeuangan/{{ $item->id_catatan }}"
                             class="w-[100%] h-44 bg-[#1F2124]  rounded-xl overflow-hidden flex-col hover:scale-105 hover:shadow-md hover:shadow-black transition-all duration-300 cursor-pointer">
                             <div class="w-full h-[20%] flex justify-start items-start shadow-black shadow-sm">
-                                <div class="w-auto h-full pl-4">
-                                    <span
-                                        class="w-full h-full  my-auto text-lg text-white font-semibold flex flex-col justify-center items-center">{{ $item->judul }}</span>
+                                <div class="w-full h-full pl-4 flex justify-between">
+                                    <div class=" h-full flex justify-start items-start ">
+                                        <span
+                                            class="w-full h-full  my-auto text-lg text-white font-semibold flex flex-col justify-center items-center">{{ $item->judul }}
+                                        </span>
+                                    </div>
+                                    <div class=" h-[60%] my-auto pr-3">
+                                        <button class="h-full group" onclick="togglePopUpDelete(event)">
+                                            <img src="../img/delete.png" class="h-full group-hover:scale-110 transition-all duration-200" alt="">
+                                        </button>
+                                        
+                                    </div>
                                 </div>
+                                
                             </div>
                             <div class=" w-full h-[80%] flex  gap-16 items-start justify-start pt-8">
                                 <div class="w-[33%] h-[50%] flex-col justify-center items-center">
@@ -157,6 +168,23 @@
         </div>
 
     </div>
+
+    <x-popUpAddCard></x-popUpAddCard>
+    <x-popUpDeleteCard></x-popUpDeleteCard>
+    <script>
+        function togglePopUpAdd() {
+            var popup = document.getElementById('popupAddCard');
+            popup.classList.toggle('hidden');
+        }
+        function togglePopUpDelete(event) {
+            
+            var popup = document.getElementById('popupDeleteCard');
+            popup.classList.toggle('hidden');
+            event.preventDefault();
+        }
+
+        
+    </script>
 
 </body>
 
