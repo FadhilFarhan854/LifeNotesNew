@@ -61,19 +61,28 @@
                         <img src="../img/money-bag.png" alt="" class="h-[70%] ml-4 my-auto filter invert">
                         @php
                             $saldo = 0;
+
+                            // KALO SEMISAL MAU TOTAL SALDO KESELURUHAN UBAH $catatan_keuangan MENJADI $isi_catatan_keuangan
                             foreach ($catatan_keuangan as $item) {
                                 $saldo += $item->sum;
+                            }
+                            if ($catatan_keuangan) {
+                                $id = $catatan_keuangan[0]->id_catatan;
                             }
                         @endphp
                         @if ($saldo > 0)
                             <span class="w-[70%] h-full text-white text-base p-3">Saldo: {{ $saldo }}</span>
                         @else
-                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: 0</span>
+                            <span class="w-[70%] h-full text-white text-base p-3">Saldo: {{ $saldo }}</span>
                         @endif
                     </div>
 
                     <div class="w-[30%] h-[80%] my-auto pr-2">
-                        <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2" placeholder="Search">                          
+                        <form action="/SearchDataKeuangan/{{ $id }}" method="get">
+                            @csrf
+                            <input type="text" class="w-full h-full bg-[#1F2124] text-white my-auto rounded-md pl-2"
+                                placeholder="Search" name="search">
+                        </form>
                     </div>
 
 
@@ -95,8 +104,11 @@
                     @if ($catatan_keuangan != null)
                         <span
                             class=" h-full text-2xl text-white font-semibold ">{{ $catatan_keuangan[0]->judul }}</span>
+                        <x-popUpEditTitle :judul="$catatan_keuangan[0]->judul" :id="$catatan_keuangan[0]->id_catatan"></x-popUpEditTitle>
                     @endif
-                    <button onclick="toggleTitlePopupEdit()" class="bg-yellow-500 rounded-full h-8 w-8 flex justify-center items-center ml-3"><img src="../img/edit.png" alt="" class="h-[70%]"></button>
+                    <button onclick="toggleTitlePopupEdit()"
+                        class="bg-yellow-500 rounded-full h-8 w-8 flex justify-center items-center ml-3"><img
+                            src="../img/edit.png" alt="" class="h-[70%]"></button>
                 </div>
                 {{-- Table --}}
 
@@ -127,6 +139,8 @@
                                             <span class="flex w-full justify-center">{{ $catatan->keuangan }}</span>
                                         </td>
                                     </tr>
+                                    <x-popUpEditMoney :deskripsi="$catatan->deskripsi" :nominal="$catatan->keuangan"
+                                        :id="$catatan->id_catatan"></x-popUpEditMoney>
                                 @endforeach
 
 
@@ -154,6 +168,7 @@
                 var popup = document.getElementById('popupEdit');
                 popup.classList.toggle('hidden');
             }
+
             function toggleTitlePopupEdit() {
                 var popup = document.getElementById('popupEditTitle');
                 popup.classList.toggle('hidden');
@@ -161,8 +176,6 @@
         </script>
 
         <x-popUp> </x-popUp>
-        <x-popUpEditTitle></x-popUpEditTitle>
-        <x-popUpEditMoney></x-popUpEditMoney>
 </body>
 
 </html>

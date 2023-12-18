@@ -47,6 +47,7 @@ class CatatanKeuanganController extends Controller
                 DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
             )
             ->where('catatan_keuangan.id_user', $id_user)
+            ->where('catatan_keuangan.id_catatan', $id_catatan)
             ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
             ->orderBy('catatan_keuangan.id_catatan', 'DESC')
             ->get();
@@ -83,14 +84,43 @@ class CatatanKeuanganController extends Controller
 
         return view('/LaporanKeuangan', ['catatan_keuangan' => $catatan_keuangan]);
     }
-    public function create()
+    public function create(Request $request)
     {
         $id_user = Session::get('id');
         catatan_keuangan::create([
             'id_user' => $id_user,
-            'judul' => 'Title',
+            'judul' => $request->judul,
         ]);
         return redirect('/LaporanKeuangan');
+    }
+    public function delete($id_catatan)
+    {
+        $catatanKeuangan = catatan_keuangan::find($id_catatan);
+        $catatanKeuangan->delete();
+
+        return redirect('/LaporanKeuangan');
+    }
+    public function edit(Request $request, $id_catatan)
+    {
+        $catatanKeuangan = catatan_keuangan::find($id_catatan);
+        $catatanKeuangan->judul = $request->input('judul');
+        $catatanKeuangan->save();
+
+        return redirect('/dataKeuangan/' . $id_catatan);
+    }
+    public function editData(Request $request, $id_catatan)
+    {
+        if ($request->has('expense')) {
+            $keuanganValue = $request->nominal * (-1);
+        } else {
+            $keuanganValue = $request->nominal;
+        }
+        $catatanKeuangan = isi_catatan_keuangan::find($id_catatan);
+        $catatanKeuangan->deskripsi = $request->input('deskripsi');
+        $catatanKeuangan->keuangan = $keuanganValue;
+        $catatanKeuangan->save();
+
+        return redirect('/dataKeuangan/' . $id_catatan);
     }
     public function createData(Request $request, $id_catatan)
     {
@@ -108,5 +138,28 @@ class CatatanKeuanganController extends Controller
             'tanggal' => $formattedDate,
         ]);
         return redirect('/dataKeuangan/' . $id_catatan);
+    }
+    public function searchData(Request $request,$id_catatan)
+    {
+        $id_user = Session::get('id');
+
+        $catatan_keuangan = DB::table('catatan_keuangan')
+            ->leftJoin('isi_catatan_keuangan', 'catatan_keuangan.id_catatan', '=', 'isi_catatan_keuangan.id_catatan')
+            ->select(
+                'catatan_keuangan.id_catatan',
+                'catatan_keuangan.judul',
+                DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
+            )
+            ->where('catatan_keuangan.id_user', $id_user)
+            ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
+            ->orderBy('catatan_keuangan.id_catatan', 'DESC')
+            ->get();
+
+        $isi_catatan_keuangan = isi_catatan_keuangan::where('isi_catatan_keuangan.deskripsi', $request->search)
+            ->where('isi_catatan_keuangan.id_catatan', $id_catatan)
+            ->orderBy('isi_catatan_keuangan.deskripsi', 'DESC')
+            ->get();
+
+            return view('/dataKeuangan', compact('isi_catatan_keuangan', 'catatan_keuangan'));
     }
 }

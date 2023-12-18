@@ -42,7 +42,12 @@ Route::put('/update/{id}', [CatatanController::class, 'update'])->name('update')
 Route::get('/LaporanKeuangan', [CatatanKeuanganController::class, 'index']);
 Route::get('/dataKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'show']);
 Route::get('/SearchCatatanKeuangan', [CatatanKeuanganController::class, 'search']);
-Route::get('/TambahCatatanKeuangan', [CatatanKeuanganController::class, 'create']);
+Route::post('/TambahCatatanKeuangan', [CatatanKeuanganController::class, 'create']);
+Route::post('/UbahJudulCatatanKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'edit']);
+Route::post('/UbahDataCatatanKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'editData']);
+Route::get('/SearchDataKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'searchData']);
+
+Route::get('/HapusCatatanKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'delete']);
 Route::get('/TambahDataKeuangan/{id_catatan}', [CatatanKeuanganController::class, 'createData']);
 
 Route::get('/Forum', function () {
