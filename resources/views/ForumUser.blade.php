@@ -47,9 +47,9 @@
             <!-- sidebar -->
             <div class="w-full h-1/3 flex-col items-center mt-0" >
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
-                    {{-- <div class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200"><span class="text-lg font-bold text-white">Catatan</span></div>
+                    <div class="w-[80%]   bg-[#3c3f43] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200"><span class="text-lg font-bold text-white">Catatan</span></div>
                     <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">To-do List</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div> --}}
+                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div>
                     <div class="w-[80%] bg-[#c7b047] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Forum</span></div>
                 </div>
             </div>  
@@ -69,7 +69,7 @@
                 <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
                     
                     {{-- item 1 --}}
-                    <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 " onclick="toggleEditCardPopup()">
+                    <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 ">
                         
                         <div class="flex justify-between h-[26%]">
                             <div class="flex flex-col">
@@ -136,85 +136,6 @@
 
                 </div>
 
-                <!-- pop-up add card container -->
-                <div id="addCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
-           
-                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleAddCardPopup()">
-
-                        <div class="grid gap-5 p-5 w-full">
-
-                            <div class="flex justify-between">
-                                <p class="text-white font-mono font-semibold text-xl">post berita</p>
-                                <span class="close text-white hover:text-gray-300 text-4xl cursor-pointer" onclick="toggleAddCardPopup()">&times;</span>
-                            </div>
-                            {{-- <textarea class="w-full h-10 max-h-32 p-2 bg-slate-100 rounded-lg scrollbar-hide bg-[#1F2124] text-slate-600 outline-none resize-none" placeholder="Tulis Judul..."></textarea> --}}
-                      
-                            <p>Judul</p>
-                            <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
-                                <span contenteditable="true"
-                                    class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" ></span>
-                            </div>
-
-                            <p>Deskripsi</p>
-                            <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
-                                <span contenteditable="true"
-                                    class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" ></span>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-end gap-6 p-5">
-                            {{-- <button class="bg-gray-500 text-white rounded-[5px] px-4 font-semibold" onclick="toggleAddCardPopup()">batal</button> --}}
-                            <button class="bg-[#559523] text-white rounded-[5px] px-4 font-semibold">kirim</button>
-                        </div>
-                
-                    </div>
-
-                </div>
-
-                <!-- pop-up edit card container -->
-                <div id="editCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
-           
-                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleEditCardPopup()">
-
-                        <div class="grid gap-5 p-5 w-full">
-                            <div class="flex justify-between">
-                                <p class="text-white font-mono font-semibold text-xl">edit berita</p>
-                                <span class="close text-white hover:text-gray-300 text-4xl cursor-pointer" onclick="toggleEditCardPopup()">&times;</span>
-                            </div>
-                            {{-- <textarea class="w-full h-10 max-h-32 p-2 bg-slate-100 rounded-lg scrollbar-hide text-slate-600 outline-none resize-none" placeholder="Tulis Judul..."></textarea> --}}
-                      
-                            <p>Judul</p>
-                            <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
-                                <span contenteditable="true"
-                                    class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" >Judul</span>
-                            </div>
-
-                            <p>Deskripsi</p>
-                            <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
-                                <span contenteditable="true"
-                                    class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio harum rem eius, alias cum pariatur sapiente autem quaerat facere perferendis aut, voluptatibus consequatur reiciendis maxime neque sit modi similique iure!</span>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-between gap-6 p-5">
-                            <img class="w-8 h-8" src="../img/ic_trash.png" alt="hapus">
-                            {{-- <button class="bg-red-800 text-white rounded-[5px] px-4 py-[2px] font-semibold">hapus</button> --}}
-                            {{-- <button class="bg-gray-500 text-white rounded-[5px] px-4 font-semibold" onclick="toggleEditCardPopup()">batal</button> --}}
-                            <button class="bg-[#559523] text-white rounded-[5px] px-4 font-semibold">kirim</button>
-                        </div>
-                
-                    </div>
-
-                </div>
-
-                {{-- button plus --}}
-                <button id="plusButton" class="fixed bottom-16 right-20 bg-[#c7b047] hover:bg-[#dbc460] text-white p-4 rounded-full shadow" onclick="toggleAddCardPopup()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                    </svg>
-                </button>
-                
-
                     {{-- tambah item dari sini --}}
 
                 </div>
@@ -245,26 +166,6 @@
         function closeReadmorePopup() {
             var popup = document.getElementById('readmorePopup');
             popup.classList.toggle('hidden');
-        }
-
-        function toggleAddCardPopup() {
-            var popup = document.getElementById('addCardPopup');
-            popup.classList.toggle('hidden');
-            // blockPlusButton();
-        }
-
-        function toggleEditCardPopup() {
-            var popup = document.getElementById('editCardPopup');
-            popup.classList.toggle('hidden');
-        }
-
-        function blockPlusButton() {
-            var addCardPopup = document.getElementById('addCardPopup');
-            var editCardPopup = document.getElementById('editCardPopup');
-            var readmorePopup = document.getElementById('readmorePopup');
-            if(editCardPopup.style.display === 'block' || readmorePopup.style.display === 'block') {
-                addCardPopup.style.display === 'none';
-            }
         }
 
     </script>

@@ -71,7 +71,7 @@
                 <div class="flex h-auto w-full bg-[#1F2124] rounded-lg justify-between shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 p-4" onclick="toggleEditCardPopup()">
                         
                     <div class="flex items-center w-full">
-                        <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                        <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" onclick="ignorePopup(event)" >
                         <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
                     </div>
                   
@@ -81,13 +81,18 @@
                 <div id="editCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
                     <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleEditCardPopup()">
 
+                        <p class="text-white font-mono font-semibold text-xl mb-3">edit list</p>
+
                             <div class="flex items-center w-full">
                                 <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
-                                <textarea class="w-full h-10 max-h-32 p-2 scrollbar-hide bg-[#1F2124] text-white outline-none resize-none" placeholder="Tulis sesuatu...">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur, vitae dignissimos minus sequi quaerat qui consectetur fugiat quia recusandae obcaecati, aliquam labore libero reprehenderit ea, earum eos facilis? Cumque?</textarea>
+                                <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
+                                    <span contenteditable="true"
+                                        class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" >Lorem ipsum dolor sit amet</span>
+                                </div>                            
                             </div>
 
                             
-                            <div class="flex justify-end">
+                            <div class="flex justify-end mt-4">
                                 <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleEditCardPopup()">Finish</span>
                             </div>
                           
@@ -99,13 +104,17 @@
            
                     <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleAddCardPopup()">
                         
+                        <p class="text-white font-mono font-semibold text-xl mb-3">add list</p>
+
                             <div class="flex items-center w-full">
                                 <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
-                                {{-- <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p> --}}
-                                <textarea class="w-full h-10 max-h-32 p-2 scrollbar-hide bg-[#1F2124] text-white outline-none resize-none" placeholder="Tulis sesuatu...">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum pariatur, vitae dignissimos minus sequi quaerat qui consectetur fugiat quia recusandae obcaecati, aliquam labore libero reprehenderit ea, earum eos facilis? Cumque?</textarea>
+                                <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
+                                    <span contenteditable="true"
+                                        class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" ></span>
+                                </div>                          
                             </div> 
 
-                            <div class="flex justify-end gap-5">
+                            <div class="flex justify-end gap-5 mt-4">
                                 <span class="close text-red-600 hover:text-red-700 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Delete</span>
                                 <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Finish</span>
                             </div>
@@ -150,6 +159,11 @@
             var popup = document.getElementById('addCardPopup');
             popup.classList.toggle('hidden');
         }
+
+        function ignorePopup(event) {
+            event.stopPropagation();
+        }
+
     </script>
 </body>
 </html>

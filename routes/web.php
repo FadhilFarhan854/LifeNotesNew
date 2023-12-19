@@ -38,3 +38,6 @@ Route::get('/Forum', function () {
 Route::get('/Todolist', function () {
     return view('Todolist');
 });
+Route::get('/ForumUser', function () {
+    return view('ForumUser');
+});
