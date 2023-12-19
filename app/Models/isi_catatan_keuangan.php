@@ -9,12 +9,13 @@ class isi_catatan_keuangan extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id_isi',
         'id_catatan',
         'deskripsi',
         'keuangan',
         'tanggal',
     ];
     protected $table = "isi_catatan_keuangan";
-    protected $primaryKey = 'id_catatan';
+    protected $primaryKey = 'id_isi';
     public $timestamps = false;
 }

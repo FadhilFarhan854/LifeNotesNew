@@ -3,7 +3,7 @@
         $nominal = $nominal * -1;
     }
 @endphp
-<div id="popupEdit"
+<div id="popupEdit{{ $id }}"
     class="fixed inset-0 items-center justify-center hidden bg-gray-800 bg-opacity-50 w-full h-full pt-48">
     <div
         class="w-[30%] h-[65%] bg-[#1F2124] rounded-lg row p-8 pt-1 shadow-md shadow-[#000000] m-auto flex flex-col justify-start">
@@ -11,7 +11,7 @@
         <div class="w-full h-[15%] flex justify-between ">
             <span class="text-white text-xl font-bold pt-5">Edit data</span><br>
             <span class="close text-white hover:text-gray-300 text-3xl cursor-pointer flex justify-end pt-3"
-                onclick="togglePopupEdit()">&times;</span>
+                onclick="togglePopupEdit({{ $id }})">&times;</span>
 
         </div>
         <div class="w-full h-[85%] mt-4 flex-col">

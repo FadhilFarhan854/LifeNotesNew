@@ -64,7 +64,7 @@
 
                             // KALO SEMISAL MAU TOTAL SALDO KESELURUHAN UBAH $catatan_keuangan MENJADI $isi_catatan_keuangan
                             foreach ($isi_catatan_keuangan as $item) {
-                                $saldo += $item->sum;
+                                $saldo += $item->keuangan;
                             }
                             if ($catatan_keuangan) {
                                 $id = $catatan_keuangan[0]->id_catatan;
@@ -124,8 +124,12 @@
                             </thead>
                             <tbody>
                                 @foreach ($isi_catatan_keuangan as $catatan)
+                                @php
+                                    $id = -1;
+                                    $id+=1;
+                                @endphp
                                     <tr class="text-white min-h-[20px] group cursor-pointer"
-                                        onclick="togglePopupEdit()">
+                                        onclick="togglePopupEdit({{$catatan->id_isi}})">
                                         <td
                                             class="border-[3px] border-white py-3 group-hover:scale-105 transition-all duration-200 ">
                                             <span class="flex w-full justify-center">{{ $catatan->tanggal }}</span>
@@ -140,16 +144,11 @@
                                         </td>
                                     </tr>
                                     <x-popUpEditMoney :deskripsi="$catatan->deskripsi" :nominal="$catatan->keuangan"
-                                        :id="$catatan->id_catatan"></x-popUpEditMoney>
+                                        :id="$catatan->id_isi"></x-popUpEditMoney>
                                 @endforeach
-
-
                             </tbody>
                         </table>
-
                     </div>
-
-
                 </div>
 
             </div>
@@ -164,9 +163,10 @@
                 popup.classList.toggle('hidden');
             }
 
-            function togglePopupEdit() {
-                var popup = document.getElementById('popupEdit');
+            function togglePopupEdit(id) {
+                var popup = document.getElementById('popupEdit'+id);
                 popup.classList.toggle('hidden');
+
             }
 
             function toggleTitlePopupEdit() {

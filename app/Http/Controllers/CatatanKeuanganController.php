@@ -36,7 +36,7 @@ class CatatanKeuanganController extends Controller
     public function show($id_catatan)
     {
         $id_user = Session::get('id');
-
+        
         $catatan_keuangan = DB::table('catatan_keuangan')
             ->leftJoin('isi_catatan_keuangan', 'catatan_keuangan.id_catatan', '=', 'isi_catatan_keuangan.id_catatan')
             ->select(
@@ -115,12 +115,13 @@ class CatatanKeuanganController extends Controller
         } else {
             $keuanganValue = $request->nominal;
         }
-        $catatanKeuangan = isi_catatan_keuangan::find($id_catatan);
+        $catatanKeuangan = isi_catatan_keuangan::where('id_isi', $id_catatan)->first();
         $catatanKeuangan->deskripsi = $request->input('deskripsi');
         $catatanKeuangan->keuangan = $keuanganValue;
         $catatanKeuangan->save();
 
-        return redirect('/dataKeuangan/' . $id_catatan);
+        $id = isi_catatan_keuangan::select('id_catatan')->where('id_isi', $id_catatan)->first();
+            return redirect('/dataKeuangan/' . $id->id_catatan);
     }
     public function createData(Request $request, $id_catatan)
     {
@@ -139,7 +140,7 @@ class CatatanKeuanganController extends Controller
         ]);
         return redirect('/dataKeuangan/' . $id_catatan);
     }
-    public function searchData(Request $request,$id_catatan)
+    public function searchData(Request $request, $id_catatan)
     {
         $id_user = Session::get('id');
 
@@ -160,6 +161,6 @@ class CatatanKeuanganController extends Controller
             ->orderBy('isi_catatan_keuangan.deskripsi', 'DESC')
             ->get();
 
-            return view('/dataKeuangan', compact('isi_catatan_keuangan', 'catatan_keuangan'));
+        return view('/dataKeuangan', compact('isi_catatan_keuangan', 'catatan_keuangan'));
     }
 }

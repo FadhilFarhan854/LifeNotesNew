@@ -108,7 +108,7 @@
                                         </span>
                                     </div>
                                     <div class=" h-[60%] my-auto pr-3">
-                                        <button class="h-full group" onclick="togglePopUpDelete(event)">
+                                        <button class="h-full group" onclick="togglePopUpDelete(event, {{ $item->id_catatan }})">
                                             <img src="../img/delete.png"
                                                 class="h-full group-hover:scale-110 transition-all duration-200"
                                                 alt="">
@@ -178,9 +178,9 @@
             popup.classList.toggle('hidden');
         }
 
-        function togglePopUpDelete(event) {
+        function togglePopUpDelete(event, id) {
 
-            var popup = document.getElementById('popupDeleteCard');
+            var popup = document.getElementById('popupDeleteCard'+id);
             popup.classList.toggle('hidden');
             event.preventDefault();
         }
