@@ -25,8 +25,8 @@
     }
     /* * {
         border: 1px solid red;
-    } */
-    
+    }
+     */
     </style>
 </head>
 
@@ -41,7 +41,7 @@
                 <div class="w-full flex justify-center items-center ">
                     <span class="text-white font-bold text-3xl ">LIFE NOTES</span>
                 </div>
-                
+
             </div>
 
             <!-- sidebar -->
@@ -52,7 +52,7 @@
                     <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div>
                     <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Forum</span></div>
                 </div>
-            </div>  
+            </div>
         </div>
 
         <div class="w-[78%] h-full  flex-col">
@@ -64,38 +64,76 @@
             </div>
 
             <!-- box container -->
-            <div class="flex w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide">
-                <div class="h-auto">
-                    <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
-                    
-                 {{-- item 1 --}}
-                <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200">
-                        
-                    {{-- <div class="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md">
-                        <div class="p-4">
-                            <label for="checkbox" class="flex items-center space-x-2 cursor-pointer">
-                                <input type="checkbox" id="checkbox" class="h-8 w-8">
-                                <span class="text-lg font-semibold">Pilih Saya</span>
-                            </label>
-                        </div>
-                    </div> --}}
+            <div class="flex flex-col w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide p-10 gap-3">
 
-                    <input type="checkbox" name="checkbox" id="checkbox" >
-                  
+
+                 {{-- item 1 --}}
+                <div class="flex h-auto w-full bg-[#1F2124] rounded-lg justify-between shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 p-4" onclick="toggleEditCardPopup()">
+
+                    <div class="flex items-center w-full">
+                        <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" onclick="ignorePopup(event)" >
+                        <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                    </div>
+
+                </div>
+
+                <!-- edit card pop-up container -->
+                <div id="editCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
+                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleEditCardPopup()">
+
+                        <p class="text-white font-mono font-semibold text-xl mb-3">edit list</p>
+
+                            <div class="flex items-center w-full">
+                                <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                                <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
+                                    <span contenteditable="true"
+                                        class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" >Lorem ipsum dolor sit amet</span>
+                                </div>
+                            </div>
+
+
+                            <div class="flex justify-end mt-4">
+                                <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleEditCardPopup()">Finish</span>
+                            </div>
+
+                    </div>
+                </div>
+
+                <!-- add card pop-up container -->
+                <div id="addCardPopup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
+
+                    <div class="w-1/2 h-auto bg-[#1F2124] rounded-lg row p-5 shadow-md shadow-black onclick="toggleAddCardPopup()">
+
+                        <p class="text-white font-mono font-semibold text-xl mb-3">add list</p>
+
+                            <div class="flex items-center w-full">
+                                <input type="checkbox" name="checkbox" id="checkbox" class="h-5 w-5 mr-5 bg-black" >
+                                <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg" id="content">
+                                    <span contenteditable="true"
+                                        class="p-2 mr-5 w-full h-full flex justify-start text-base text-slate-600 outline-none" ></span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end gap-5 mt-4">
+                                <span class="close text-red-600 hover:text-red-700 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Delete</span>
+                                <span class="close text-yellow-500 hover:text-yellow-600 text-xl font-semibold cursor-pointer" onclick="toggleAddCardPopup()">Finish</span>
+                            </div>
+
+
+                    </div>
                 </div>
 
                     {{-- button plus --}}
-                    <button class="fixed bottom-16 right-20 bg-[#c7b047] hover:bg-[#dbc460] text-white p-4 rounded-full shadow">
+                    <button class="fixed bottom-16 right-20 bg-[#c7b047] hover:bg-[#dbc460] text-white p-4 rounded-full shadow" onclick="toggleAddCardPopup()">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </button>
-                
+
 
                     {{-- tambah item dari sini --}}
 
-                    </div>
-                </div>
+
             </div>
 
         </div>
@@ -104,7 +142,7 @@
     <script>
         function toggleLike(button) {
             var likeImage = button.querySelector('.heart-icon');
-    
+
             if (likeImage.src.endsWith('grey_heart.png')) {
                 likeImage.src = '../img/red_heart.png';
             } else {
@@ -112,10 +150,20 @@
             }
         }
 
-        function togglePopup() {
-            var popup = document.getElementById('popup');
+        function toggleEditCardPopup() {
+            var popup = document.getElementById('editCardPopup');
             popup.classList.toggle('hidden');
         }
+
+        function toggleAddCardPopup() {
+            var popup = document.getElementById('addCardPopup');
+            popup.classList.toggle('hidden');
+        }
+
+        function ignorePopup(event) {
+            event.stopPropagation();
+        }
+
     </script>
 </body>
 </html>
