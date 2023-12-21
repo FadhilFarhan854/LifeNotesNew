@@ -11,11 +11,14 @@
         </div>
         <div class="w-full h-[85%] mt-8 flex-col">
             <div class="h-[80%]">
-                <form action="/TambahCatatanKeuangan" method="post" class="">
+                <form action="/TambahCatatanKeuangan" method="post" class="flex flex-col justify-between gap-16">
                     @csrf
-                    <input type="text"
+                    <div>
+                        <input type="text"
                         class="bg-white/0 text-white text-base outline-none w-full border-b-2 border-white mt-6 pb-1"
                         placeholder="Add New Title" name="judul">
+                    </div>
+                    
                     <div class="w-full h-[20%] flex justify-end items-end gap-2">
 
                         <button

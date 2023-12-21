@@ -30,7 +30,7 @@
             <div class="w-full h-1/3 flex-col items-center mt-0">
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
                     <button onclick="window.location.href='/NotesMain'"
-                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Catatan</span>
                     </button>
                     <button onclick="window.location.href='/Todolist'"
@@ -38,7 +38,7 @@
                         <span class="text-lg font-bold text-white">To-do List</span>
                     </button>
                     <button onclick="window.location.href='/LaporanKeuangan'"
-                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                    class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Laporan Keuangan</span>
                     </button>
                     <button onclick="window.location.href='/Forum'"
@@ -177,6 +177,9 @@
             var popup = document.getElementById('popupAddCard');
             popup.classList.toggle('hidden');
         }
+
+        
+
 
         function togglePopUpDelete(event, id) {
 
