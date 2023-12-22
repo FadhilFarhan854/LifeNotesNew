@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,11 @@ class UserController extends Controller
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
-
+        $admin = Admin::where('username', $request->username)->where('password', $request->password)->first();
+        if ($admin) {
+            $request->session()->put('id', $admin->id_admin);
+            return redirect('/ForumAdmin');
+        }
         $user = User::where('username', $request->username)->first();
         $remember = $request->has('check');
         $id_user = $user->id_user;
@@ -48,6 +53,6 @@ class UserController extends Controller
     {
         $request->session()->flush();
         Auth::logout();
-        return view('/');
+        return redirect('/');
     }
 }

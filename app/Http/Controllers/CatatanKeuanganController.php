@@ -36,7 +36,7 @@ class CatatanKeuanganController extends Controller
     public function show($id_catatan)
     {
         $id_user = Session::get('id');
-        
+
         $catatan_keuangan = DB::table('catatan_keuangan')
             ->leftJoin('isi_catatan_keuangan', 'catatan_keuangan.id_catatan', '=', 'isi_catatan_keuangan.id_catatan')
             ->select(
@@ -77,7 +77,7 @@ class CatatanKeuanganController extends Controller
                 DB::raw('SUM(isi_catatan_keuangan.keuangan) AS sum')
             )
             ->where('catatan_keuangan.id_user', $id_user)
-            ->where('catatan_keuangan.judul', $search)
+            ->where('catatan_keuangan.judul', 'like', '%' . $search . '%')
             ->groupBy('catatan_keuangan.id_catatan', 'catatan_keuangan.judul')
             ->orderBy('catatan_keuangan.id_catatan', 'DESC')
             ->get();
@@ -121,7 +121,7 @@ class CatatanKeuanganController extends Controller
         $catatanKeuangan->save();
 
         $id = isi_catatan_keuangan::select('id_catatan')->where('id_isi', $id_catatan)->first();
-            return redirect('/dataKeuangan/' . $id->id_catatan);
+        return redirect('/dataKeuangan/' . $id->id_catatan);
     }
     public function createData(Request $request, $id_catatan)
     {
@@ -156,7 +156,7 @@ class CatatanKeuanganController extends Controller
             ->orderBy('catatan_keuangan.id_catatan', 'DESC')
             ->get();
 
-        $isi_catatan_keuangan = isi_catatan_keuangan::where('isi_catatan_keuangan.deskripsi', $request->search)
+        $isi_catatan_keuangan = isi_catatan_keuangan::where('isi_catatan_keuangan.deskripsi', 'like', '%' . $request->search . '%')
             ->where('isi_catatan_keuangan.id_catatan', $id_catatan)
             ->orderBy('isi_catatan_keuangan.deskripsi', 'DESC')
             ->get();
