@@ -60,7 +60,7 @@
             <div class="w-full h-1/3 flex-col items-center mt-0">
                 <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
                     <button onclick="window.location.href='/NotesMain'"
-                        class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                        class="w-[80%] bg-[#3c3f43] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Catatan</span>
                     </button>
                     <button onclick="window.location.href='/Todolist'"
@@ -72,7 +72,7 @@
                         <span class="text-lg font-bold text-white">Laporan Keuangan</span>
                     </button>
                     <button onclick="window.location.href='/Forum'"
-                        class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
+                        class="w-[80%] bg-[#c7b047] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Forum</span>
                     </button>
                 </div>
@@ -82,18 +82,18 @@
         <div class="w-[78%] h-full  flex-col">
             <div class="w-full h-[10%] bg-[#1F2124] ">
                 <!-- search -->
-                <form action="/SearchForum" method="get">
-                    <div class="w-full h-full flex align-middle items-center">
+                <form class="w-full h-full flex align-middle items-center" action="/SearchForum" method="get">
+                    {{-- <div class="w-full h-full flex align-middle items-center"> --}}
                         <input name="search"
                             class="  w-full py-3 h-[60%] rounded-lg bg-[#00000075] border-black border-solid border-2 text-xl font-bold text-white px-12"
                             placeholder="Search" type="text">
-                    </div>
+                    {{-- </div> --}}
                 </form>
             </div>
 
             <!-- box container -->
             <div class="flex w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide">
-                <div class="h-auto">
+                {{-- <div class="h-auto"> --}}
                     <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
 
                         {{-- item 1 --}}
@@ -102,7 +102,7 @@
                                 $timeFormat = Carbon::parse($forum->times)->diffForHumans();
                             @endphp
                             <div
-                                class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 ">
+                                class=" h-64 w-full bg-[#1F2124] rounded-lg row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 ">
                                 <div class="flex justify-between h-[26%]">
                                     <div class="flex flex-col">
                                         <h1 class="font-semibold text-xl">{{ $forum->judul }}</h1>
@@ -167,7 +167,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
 

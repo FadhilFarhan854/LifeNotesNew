@@ -72,19 +72,19 @@
         <div class="w-[78%] h-full  flex-col">
             <div class="w-full h-[10%] bg-[#1F2124] ">
                 <!-- search -->
-                <form action="/SearchForumAdmin" method="get">
+                <form class="w-full h-full flex align-middle items-center" action="/SearchForumAdmin" method="get">
                     @csrf
-                <div class="w-full h-full flex align-middle items-center">
+                {{-- <div class="w-full h-full flex mt-5 align-middle items-center"> --}}
                     <input name="search"
                         class="  w-full py-3 h-[60%] rounded-lg bg-[#00000075] border-black border-solid border-2 text-xl font-bold text-white px-12"
                         placeholder="Search" type="text">
-                    </div>
+                    {{-- </div> --}}
                 </form>
             </div>
 
             <!-- box container -->
             <div class="flex w-full h-[90%] bg-[#00000075] rounded-2xl overflow-y-scroll scrollbar-hide">
-                <div class="h-auto">
+                {{-- <div class="h-auto"> --}}
                     <div class="grid grid-cols-2 w-full h-auto items-start gap-5 p-5">
 
                         {{-- item 1 --}}
@@ -92,7 +92,7 @@
                             @php
                                 $timeFormat = Carbon::parse($forum->times)->diffForHumans();
                             @endphp
-                            <div class=" h-64 bg-[#1F2124] rounded-lg text-9xl row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 "
+                            <div class=" h-64 bg-[#1F2124] rounded-lg row p-5 shadow-md hover:shadow-[#2e1212] hover:scale-105 transition-all duration-200 "
                                 onclick="toggleEditCardPopup({{ $forum->id_saluran }})">
 
                                 <div class="flex justify-between h-[26%]">
@@ -161,7 +161,7 @@
                                                 onclick="toggleEditCardPopup({{ $forum->id_saluran }})">&times;</span>
                                         </div>
                                         {{-- <textarea class="w-full h-10 max-h-32 p-2 bg-slate-100 rounded-lg scrollbar-hide text-slate-600 outline-none resize-none" placeholder="Tulis Judul..."></textarea> --}}
-                                        <form action="UpdateForum/{{ $forum->id_saluran }}" method="get">
+                                        <form class="grid gap-5 p-5 w-full" action="UpdateForum/{{ $forum->id_saluran }}" method="get">
                                             @csrf
                                             <p>Judul</p>
                                             <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg"
@@ -208,7 +208,7 @@
                                             onclick="toggleAddCardPopup()">&times;</span>
                                     </div>
                                     {{-- <textarea class="w-full h-10 max-h-32 p-2 bg-slate-100 rounded-lg scrollbar-hide bg-[#1F2124] text-slate-600 outline-none resize-none" placeholder="Tulis Judul..."></textarea> --}}
-                                    <form action="AddForum" method="post">
+                                    <form class="grid gap-5 p-5 w-full" action="AddForum" method="post">
                                         @csrf
                                         <p>Judul</p>
                                         <div class="w-full h-auto py-1 overflow-y-scroll scrollbar-hide bg-slate-100 rounded-lg"
@@ -250,7 +250,7 @@
                         {{-- tambah item dari sini --}}
 
                     </div>
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
 
