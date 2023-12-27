@@ -17,7 +17,7 @@ class ForumController extends Controller
         $forums = Forum::select('saluran.*', 'username', DB::raw('SUM(IF(likes.id_user = '. $id_user. ', 1,0)) AS is_liked'), 'likes.id_user', DB::raw('(SELECT COUNT(likes.id_user) FROM likes WHERE saluran.id_saluran = likes.id_saluran) as likes'))
             ->leftJoin('admin', 'saluran.id_admin', '=', 'admin.id_admin')
             ->leftJoin('likes', 'saluran.id_saluran', '=', 'likes.id_saluran')
-            ->groupBy('likes.id_saluran')
+            ->groupBy('saluran.id_saluran')
             ->orderBy('id_saluran', 'DESC')
             ->get();
 

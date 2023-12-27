@@ -49,6 +49,25 @@ class UserController extends Controller
         ]);
         return redirect('/Login');
     }
+
+    public function forgotPass(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+            'Confirm_password' => 'required|string',
+        ]);
+        if ($request->password == $request->Confirm_password) {
+            $user = User::where('username', $request->username)->first();
+            $password = bcrypt($request->password);
+            $user->password = $password;
+            $user->save();
+            return redirect('/Login');
+        } else {
+            return redirect()->back()->withErrors(['Password' => 'Password not match']);
+        }
+    }
+
     public function logout(Request $request)
     {
         $request->session()->flush();

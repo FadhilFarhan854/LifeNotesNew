@@ -49,7 +49,7 @@
                         <Span class="font-bold text-4xl text-white ">Forgot Password</Span>
                     </div>
                     <div class="p-5">
-                        <form action="/bLogin" method="post" class="w-[100%] h-[75%]  mt-3">
+                        <form action="/bForgotPass" method="post" class="w-[100%] h-[75%]  mt-3">
                             @csrf
                             <input type="text" name="username"
                                 class="rounded-md w-full py-2 mt-5 px-3 bg-[#fff0] outline outline-1 outline-white text-white"
@@ -60,12 +60,12 @@
                             <input type="text" name="Confirm_password"
                                 class="rounded-md w-full py-2 mt-5 px-3 bg-[#fff0] outline outline-1 outline-white text-white mb-1"
                                 placeholder="Confirm Password">
-                        
+
                             <input type="submit"
                                 class="rounded-md w-full h-10  bg-white font-bold hover:bg-[#c7b047] hover:text-white focus:bg-white hover:scale-105 transition-all duration-100 text-black mt-10 focus:text-black"
                                 value="Reset Password">
 
-                            
+
 
                             <a href="/"
                                 class=" rounded-md w-full h-10  bg-white font-bold hover:bg-[#c7b047] hover:text-white  focus:bg-white hover:scale-105 transition-all duration-100 text-black mt-2 flex items-center justify-center focus:text-black ">Back</a>

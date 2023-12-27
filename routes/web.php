@@ -40,6 +40,7 @@ Route::get('/Register', function () {
     return view('Register');
 });
 Route::get('/Logout', [UserController::class, 'logout']);
+Route::post('/bForgotPass',[UserController::class, 'forgotPass']);
 
 Route::get('/Catatan/{id_catatan}', [CatatanController::class, 'index']);
 Route::get('/HapusCatatan/{id_catatan}', [CatatanController::class, 'delete']);
