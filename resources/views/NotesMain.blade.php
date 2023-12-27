@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @vite('resources/css/app.css')
-    <!-- <style>
+    {{-- <style>
          * {
         border: 1px solid red;
     }
-    </style> -->
+    </style>  --}}
 </head>
 
-<body class="bg-[#1F2124] h-[100vh]  w-full">
+<body class="bg-[#1F2124] h-[100vh]  w-full overflow-hidden">
     <div class="flex w-full h-full">
 
         <div class="w-[20%] h-full bg-[#fff0] flex-col">
             <div class="w-full h-1/3 flex-col items-center ">
-                <div class="w-full h-full flex justify-center items-center mt-5">
-                    <img class="w-44" src="../img/logo_dpl.png" alt="">
+                <div class="w-full h-full flex justify-center items-center ">
+                    <img class="w-36" src="../img/logo_dpl.png " alt="">
                 </div>
                 <div class="w-full flex justify-center items-center ">
                     <span class="text-white font-bold text-3xl ">LIFE NOTES</span>
@@ -27,8 +27,8 @@
 
             </div>
             <!-- sidebar -->
-            <div class="w-full h-1/3 flex-col items-center mt-0">
-                <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
+            <div class="w-full h-2/3 flex-col items-center justify-between pt-10 pb-6">
+                <div class="w-full h-[60%] flex flex-col gap-2  justify-center items-center">
                     <button onclick="window.location.href='/NotesMain'"
                         class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
                         <span class="text-lg font-bold text-white">Catatan</span>
@@ -45,8 +45,15 @@
                         class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
                         <span class="text-lg font-bold text-white">Forum</span>
                     </button>
+                </div >
+                 <div class="w-full h-[40%] flex flex-col gap-2 justify-end items-center">
+                    <button onclick="window.location.href='/Logout'"
+                        class="w-[80%] bg-[#4F1515] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#d44040] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Logout</span>
+                    </button>
                 </div>
             </div>
+           
 
 
         </div>
@@ -69,10 +76,9 @@
             <div class="w-full h-[90%]  bg-[#00000075] rounded-2xl">
 
                 <div
-                    class="w-full h-full flex flex-wrap items-start justify-center gap-5 p-5 overflow-y-scroll scrollbar-hide ">
-
-                    <!-- box1 -->
-                    <div
+                    class="w-full h-full  overflow-y-scroll scrollbar-hide ">
+                    <div class="w-full flex flex-wrap items-start justify-center gap-5 p-5 ">
+                        <div
                         class=" w-52 h-52 bg-[#1F2124] rounded-lg text-9xl flex-col items-center justify-center shadow-md hover:shadow-[#d3d174] hover:scale-105 transition-all duration-200">
                         <a href="/TambahCatatan"><span
                                 class="w-full h-full flex justify-center items-center -mt-3 text-9xl text-white">+</span></a>
@@ -92,6 +98,9 @@
                         </a>
                     @endforeach
                 </div>
+                    </div>
+                    <!-- box1 -->
+                    
             </div>
         </div>
 

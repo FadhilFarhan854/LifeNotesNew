@@ -33,6 +33,9 @@ Route::post('/bLogin',  [UserController::class, 'login']);
 Route::get('/Login', function () {
     return view('Login');
 });
+Route::get('/ForgotPass', function () {
+    return view('ForgotPass');
+});
 Route::get('/Register', function () {
     return view('Register');
 });

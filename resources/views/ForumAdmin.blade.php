@@ -46,8 +46,8 @@
 
         <div class="w-[20%] h-full bg-[#fff0] flex-col">
             <div class="w-full h-1/3 flex-col items-center ">
-                <div class="w-full h-full flex justify-center items-center mt-5">
-                    <img class="w-44" src="../img/logo_dpl.png" alt="">
+                <div class="w-full h-full flex justify-center items-center ">
+                    <img class="w-36" src="../img/logo_dpl.png " alt="">
                 </div>
                 <div class="w-full flex justify-center items-center ">
                     <span class="text-white font-bold text-3xl ">LIFE NOTES</span>
@@ -56,15 +56,22 @@
             </div>
 
             <!-- sidebar -->
-            <div class="w-full h-1/3 flex-col items-center mt-0">
-                <div class="w-full h-full flex flex-wrap mt-20 justify-center items-center">
-                    {{-- <div class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200"><span class="text-lg font-bold text-white">Catatan</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">To-do List</span></div>
-                    <div class="w-[80%] bg-[#3c3f43] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200"><span class="text-lg font-bold text-white">Laporan Keuangan</span></div> --}}
-                    <div
-                        class="w-[80%] bg-[#c7b047] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#2b2d30] transition-all duration-200">
-                        <span class="text-lg font-bold text-white" onclick="window.location.href='/ForumAdmin'">Forum</span>
-                    </div>
+            <div class="w-full h-96 flex-col items-center mt-0   ">
+                <div class="w-full h-full flex flex-col mt-20 justify-between items-center">
+                   
+                    
+                    <button onclick="window.location.href='/ForumAdmin'"
+                    class="w-[80%]   bg-[#c7b047] text-white  h-12 rounded-lg flex  items-center justify-center hover:scale-105  transition-all duration-200 focus:bg-[#82722d]">
+                        <span class="text-lg font-bold text-white">Forum</span>
+                    </button>
+                        
+                   
+                    
+                    <button onclick="window.location.href='/Logout'"
+                        class="w-[80%] bg-[#4F1515] h-12 rounded-lg flex  items-center justify-center hover:scale-105 hover:bg-[#d44040] transition-all duration-200">
+                        <span class="text-lg font-bold text-white">Logout</span>
+                    </button>
+                  
                 </div>
             </div>
         </div>
